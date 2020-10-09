@@ -1,4 +1,4 @@
-## Jobboard frontend written in React
+## Jobboard written in Django ( And also migrating to Django from React / Django / DRF)
 
 ![Netlify](https://img.shields.io/netlify/a71ca40d-f524-4c22-8ea2-9d42c6fdf177) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
