@@ -3,4 +3,11 @@
 
 {% block content %}
 <h1> Homepage </h1>
+{% if user.is_authenticated %}
+Hello {{user.email}}
+<a href="{%url 'logout' %}">Log Out </a>
+{% else %}<p> Login </p> 
+<a href="{% url 'login' %}"> Login</a>
+<a href="{%url 'signup' %}"> Sign Up </a>
+{% endif %}
 {% endblock content %}
