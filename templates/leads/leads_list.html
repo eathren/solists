@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block title %}
+Leads
+{% endblock title %}
+
+{% block content %}
+{% for lead in lead_list %}
+<div>
+    <h2> <a href="">{{lead.titel}}</a></h2>
+</div>
+{% endblock content %}
