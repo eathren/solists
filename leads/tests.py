@@ -23,3 +23,5 @@ class HomepageTests(SimpleTestCase):
     def test_homepage_does_not_contain_incorrect_html(self):
         response = self.client.get('/')
         self.assertNotContains( response, ' I should not be on this page')
+
+    

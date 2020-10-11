@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title%} Solists {% endblock title%}</title>
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' % }">
 </head>
 <body>
     {%block content %}
     {%endblock content%}
     <!-- Javascript -->
-    {% block javascript %}
-      <script src="{% static 'js/base.js'%}"></script>
-    {% endblock javascript %}
+    <!-- {% block javascript %}
+      <script src="{% static 'js/base.js' % }"></script>
+    {% endblock javascript %} -->
 </body>
 </html>
