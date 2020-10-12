@@ -11,19 +11,43 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import environ
+
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
+# Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
+SECRET_KEY = env("SECRET_KEY", default="unsafe-secret-key")
+
+DEBUG = env('DEBUG', default = True)
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env("DATABASE_NAME"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
+    }
+}
 # import dj_database_url
 # import django_heroku
-from .secrets import *
+# from .secrets import *
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+
+
+DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
@@ -47,6 +71,7 @@ INSTALLED_APPS = [
     #  Local
     'users.apps.UsersConfig',
     'leads.apps.LeadsConfig',
+    'orders.apps.OrdersConfig',
     
 ]
 
@@ -157,3 +182,7 @@ CRISPY_TEMPLATE_PACK  ='bootstrap4'
 
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = str(BASE_DIR.joinpath('media')) 
+
+# Stripe
+STRIPE_TEST_PUBLISHABLE_KEY = env('STRIPE_TEST_PUBLISHABLE_KEY')
+STRIPE_TEST_SECRET_KEY = env('STRIPE_TEST_SECRET_KEY')

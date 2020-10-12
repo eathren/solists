@@ -1,2 +1,4 @@
 **secrets.py
 solists/secrets.py
+**.env
+solists.env
