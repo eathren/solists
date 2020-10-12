@@ -13,6 +13,10 @@ django-crispy-forms = "*"
 django-allauth = "*"
 pillow = "*"
 stripe = "*"
+django-debug-toolbar = "*"
+django-admin-honeypot = "*"
+dj-database-url = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"

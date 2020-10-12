@@ -16,6 +16,11 @@ class Lead(models.Model):
         editable = False)
     title=models.CharField(max_length=200)
     author = models.CharField(max_length = 200)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['id'], name='id_index')
+        ]
     
     def __str__(self):
         return self.title

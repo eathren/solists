@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 import environ
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 
 env = environ.Env()
 # reading .env file
@@ -49,7 +54,8 @@ DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
 
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
+
 
 
 # Application definition
@@ -67,6 +73,7 @@ INSTALLED_APPS = [
     'multiselectfield',
     'allauth',
     'allauth.account',
+    'debug_toolbar',
 
     #  Local
     'users.apps.UsersConfig',
@@ -86,6 +93,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware', 
+    'django.middleware.cache.FetchFromCacheMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'solists.urls'
@@ -186,3 +197,25 @@ MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 # Stripe
 STRIPE_TEST_PUBLISHABLE_KEY = env('STRIPE_TEST_PUBLISHABLE_KEY')
 STRIPE_TEST_SECRET_KEY = env('STRIPE_TEST_SECRET_KEY')
+
+# django-debug-toolbar
+import socket
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
+
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 604800         
+CACHE_MIDDLEWARE_KEY_PREFIX = ''
+
+# production
+if env("ENVIRONMENT") == 'production':
+    SECURE_BROWSER_XSS_FILTER = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 3600  
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SESSION_COOKIE_SECURE = True 
+    CSRF_COOKIE_SECURE = True 
+    DEBUG = False
