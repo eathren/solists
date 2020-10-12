@@ -23,5 +23,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')), # new
 
     # Local apps
-    path('', include('leads.urls')),
+    path('', include('pages.urls')),
+    path('leads/', include('leads.urls')),
 ]

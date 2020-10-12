@@ -1,5 +1,8 @@
-from django.views.generic import TemplateView
+from django.views.generic import ListView, DetailView
 # Create your views here.
+from .models import Lead
 
-class HomePageView(TemplateView):
-    template_name = 'home.html'
+class LeadListView(ListView):
+    model = Lead
+    context_object_name = "lead_list"
+    template_name = 'leads/lead_list.html'
