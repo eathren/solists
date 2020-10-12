@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+{% block title %}
+{{lead.title}}
+{% endblock title %}
+{% block content %}
+<div class="lead-detail">
+    <h2>
+    {{object.title}}
+    </h2>
+    <p> Author: {{object.author}}   </p>
+</div>
+{% endblock content %}
