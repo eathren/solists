@@ -2,6 +2,6 @@ from django.contrib import admin
 from .models import Lead
 # Register your models here.
 class LeadAdmin(admin.ModelAdmin):
-    list_display = ("title", "author")
+    list_display = ("title", "author", "user_author")
 
 admin.site.register(Lead, LeadAdmin)
