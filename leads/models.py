@@ -9,6 +9,7 @@ class Lead(models.Model):
         on_delete = models.CASCADE,
         related_name = "author"
     )
+    logo = models.ImageField(upload_to = 'logos/', blank=True)
     id = models.UUIDField(
         primary_key = True,
         default = uuid.uuid4,
@@ -20,5 +21,6 @@ class Lead(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse("lead_detail", args=[str(self.id)])
+        return reverse("lead_detail", kwargs={'pk': str(self.pk)})
+
     

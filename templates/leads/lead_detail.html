@@ -4,9 +4,12 @@
 {% endblock title %}
 {% block content %}
 <div class="lead-detail">
+    {% if lead.logo %}
+    <img class="lead-logo" src="{{ lead.logo.url}}" alt="{{ lead.title }}">
+    {% endif %}
     <h2>
-    {{lead.title}}
+        {{lead.title}}
     </h2>
-    <p> Author: {{lead.author}}   </p>
+    <p> Author: {{lead.author}} </p>
 </div>
 {% endblock content %}
