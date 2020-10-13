@@ -15,34 +15,41 @@ from pathlib import Path
 import dj_database_url
 import environ
 
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
+
+
+
+# Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
+SECRET_KEY = env("SECRET_KEY", default="unsafe-secret-key")
+
+DEBUG = env('DEBUG', default = False)
+
+ALLOWED_HOSTS = ['solists.herokuapp.com', 'localhost', '127.0.0.1', 'solists.com', '.herokuapp.com']
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'eathren',
+        'USER': 'name',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 
-env = environ.Env()
-# reading .env file
-environ.Env.read_env()
-
-# Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
-SECRET_KEY = env("SECRET_KEY", default="unsafe-secret-key")
-
-DEBUG = env('DEBUG', default = True)
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("DATABASE_NAME"),
-        'USER': env("DATABASE_USER"),
-        'PASSWORD': env("DATABASE_PASSWORD"),
-        'HOST': env("DATABASE_HOST"),
-        'PORT': env("DATABASE_PORT"),
-    }
-}
-# import dj_database_url
-# import django_heroku
-# from .secrets import *
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -56,7 +63,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-ALLOWED_HOSTS = ['solists.herokuapp.com', 'localhost', '127.0.0.1', 'solists.com']
 
 
 
