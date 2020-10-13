@@ -1,0 +1,1 @@
+web: gunicorn  solists.wsgi --log-file 
