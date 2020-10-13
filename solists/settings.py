@@ -26,11 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = env("SECRET_KEY")
 
-DEBUG = env.bool('DEBUG', default = False)
+# DEBUG = env.bool('DEBUG')
+DEBUG =True
 
-ALLOWED_HOSTS = ['solists.herokuapp.com', 'localhost', '127.0.0.1', 'solists.com', '.herokuapp.com']
-
-
+ALLOWED_HOSTS = ['localhost','solists.herokuapp.com', 'localhost:8000',  '127.0.0.1', '0.0.0.0']
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -42,38 +41,24 @@ ALLOWED_HOSTS = ['solists.herokuapp.com', 'localhost', '127.0.0.1', 'solists.com
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': env("DATABASE_NAME"),
-#         'USER': env("DATABASE_USER"),
-#         'PASSWORD': env("DATABASE_PASSWORD"),
-#         'HOST': env("DATABASE_HOST"),
-#         'PORT': env("DATABASE_PORT"),
-#     }
-# }
-
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
-
-
-
 DATABASES = {
-    "default": env.dj_db_url("DATABASE_URL")
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env("DATABASE_NAME"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
+    }
 }
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
-
-
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-
-
-
-
-
 
 # Application definition
 
@@ -163,6 +148,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+django_heroku.settings(locals())
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -228,19 +216,17 @@ CACHE_MIDDLEWARE_SECONDS = 604800
 CACHE_MIDDLEWARE_KEY_PREFIX = ''
 
 # production
-# if env("ENVIRONMENT") == 'production':
-#     SECURE_BROWSER_XSS_FILTER = True
-#     X_FRAME_OPTIONS = 'DENY'
-#     SECURE_SSL_REDIRECT = True
-#     SECURE_HSTS_SECONDS = 3600  
-#     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-#     SECURE_HSTS_PRELOAD = True
-#     SECURE_CONTENT_TYPE_NOSNIFF = True
-#     SESSION_COOKIE_SECURE = True
-#     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#     CSRF_COOKIE_SECURE = True 
-#     DEBUG = False
+if env("ENVIRONMENT") == 'production':
+    SECURE_BROWSER_XSS_FILTER = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_SSL_REDIRECT = False
+    SECURE_HSTS_SECONDS = 3600  
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    CSRF_COOKIE_SECURE = True 
+    DEBUG = False
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
-
-django_heroku.settings(locals())
