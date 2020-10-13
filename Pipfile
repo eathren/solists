@@ -21,6 +21,7 @@ whitenoise = "==5.2.0"
 django-heroku = "==0.3.1"
 django-environ = "==0.4.5"
 environs = "==8.0.0"
+requests = "*"
 
 [requires]
 python_version = "3.8"
