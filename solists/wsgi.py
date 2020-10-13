@@ -1,5 +1,5 @@
 """
-WSGI config for solists project.
+WSGI config for new project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
