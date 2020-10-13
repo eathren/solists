@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 import dj_database_url
 import django_heroku
+django_heroku.settings(locals())
 from pathlib import Path
 from environs import Env
 env = Env()
@@ -111,19 +112,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'solists.wsgi.application'
-
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': env("DATABASE_NAME"),
-#         'USER': env("DATABASE_USER"),
-#         'PASSWORD': env("DATABASE_PASSWORD"),
-#         'HOST': env("DATABASE_HOST"),
-#         'PORT': env("DATABASE_PORT"),
-#     }
-# }
 
 
 DATABASES = {
@@ -257,4 +245,3 @@ CACHE_MIDDLEWARE_KEY_PREFIX = ''
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 
 
-django_heroku.settings(locals())
