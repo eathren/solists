@@ -10,18 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+from pathlib import Path
 import dj_database_url
 import django_heroku
 django_heroku.settings(locals())
-from pathlib import Path
 from environs import Env
 env = Env()
 env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
