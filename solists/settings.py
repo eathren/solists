@@ -27,7 +27,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = env("SECRET_KEY")
 
-DEBUG = env.bool('DEBUG')
+# DEBUG = env.bool('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = ['solists.herokuapp.com', 'localhost', '127.0.0.1', 'solists.com', '.herokuapp.com']
 
