@@ -1,1 +1,1 @@
-web: gunicorn  solists.wsgi --log-file 
+web: gunicorn solists.wsgi --log-file -
