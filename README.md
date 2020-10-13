@@ -36,3 +36,7 @@ Run <code> pipenv install </code>
 python manage.py test
 
 To test stripe functionality, use a stripe_test key (that you create @ stripe.com), and use the cc value of 4242 4242 4242 4242,. Put any expiration date and etc numbers in afterwards.
+
+### Notes and gotchas
+
+Procfile has to have a capital P. Otherwise it doesn't work on heroku.
