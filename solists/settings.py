@@ -10,15 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-from pathlib import Path
 import django_heroku
+from pathlib import Path
 import dj_database_url
 import environ
 
-django_heroku.settings(locals())
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 
 env = environ.Env()
@@ -49,7 +49,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
-DATABASE_PASSWORD = os.getenv("DATABASE_PASSWORD")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -224,3 +223,7 @@ if env("ENVIRONMENT") == 'production':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     CSRF_COOKIE_SECURE = True 
     DEBUG = False
+
+
+
+django_heroku.settings(locals())
