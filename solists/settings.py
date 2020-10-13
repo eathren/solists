@@ -30,7 +30,7 @@ SECRET_KEY = env("SECRET_KEY")
 # DEBUG = env.bool('DEBUG')
 DEBUG = True
 
-ALLOWED_HOSTS = ['solists.herokuapp.com', 'localhost', '127.0.0.1', 'solists.com', '.herokuapp.com']
+ALLOWED_HOSTS = ['solists.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0', 'solists.com', '.herokuapp.com', '*']
 
 
 
@@ -241,8 +241,5 @@ if env("ENVIRONMENT") == 'production':
     DEBUG = False
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> ebf913b063723bb299e0e6c6e63e01cceccd27ca
