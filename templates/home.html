@@ -4,7 +4,10 @@
 {% block title %}Solists | Work Remotely {% endblock title %}
 
 {% block content %}
-<h1>Homepage</h1>
+<p class="p-header">
+  Solists is a remote work job board for <b> software developers </b> and <b> designers </b>.
+</p>
+<hr>
 {% if user.is_authenticated %}
 <p>Hi {{ user.email }}!</p>
 <p><a href="{% url 'account_logout' %}">Log Out</a></p>

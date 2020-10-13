@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' type='image/x-icon' %}">
     <!-- Compiled and minified CSS -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-
-
+    <!-- roboto font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
   </head>
 
@@ -20,17 +20,27 @@
 
 
       <nav class="navbar-main">
-        <div class="container">
+        <div class="navbar-container">
+          <div class="navbar-flex">
 
-          <a href="{% url 'home' %}" class="normalize navbar-main-items text-white">Solists</a>
-          {% if user.is_authenticated %}
-          <a class="color-white normalize navbar-main-items" href="{% url 'account_logout' %}">Log Out</a>
-          {% else %}
+            <a href="{% url 'home' %}" class="normalize navbar-main-items text-white">SOLISTS</a>
+            <div class="navbar-main-center">
+              <a class="color-white normalize navbar-main-items" href="{% url 'account_logout' %}">FIND JOBS</a>
+              <a class="color-white normalize navbar-main-items" href="{% url 'account_logout' %}">FIND DEVELOPERS</a>
+              <a class="color-white normalize navbar-main-items" href="{% url 'account_logout' %}">POST A JOB</a>
+            </div>
+            <div class="navbar-main-right">
 
-          <a class="color-white normalize navbar-main-items" href="{% url 'account_login' %}">Log In</a>
-          <a class="color-white normalize navbar-main-items" href="{% url 'account_signup' %}">Sign Up</a>
+              {% if user.is_authenticated %}
+              <a class="color-white normalize navbar-main-items" href="{% url 'account_logout' %}">LOGOUT</a>
+              {% else %}
 
-          {% endif %}
+              <a class="color-white normalize navbar-main-items" href="{% url 'account_login' %}">LOG IN</a>
+              <a class="color-white normalize navbar-main-items" href="{% url 'account_signup' %}">SIGN UP</a>
+
+              {% endif %}
+            </div>
+          </div>
         </div>
       </nav>
       </div>
