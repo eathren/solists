@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
 SECRET_KEY = env("SECRET_KEY")
 
-# DEBUG = env.bool('DEBUG')
-DEBUG = True
+DEBUG = env.bool('DEBUG')
+# DEBUG = True
 
 ALLOWED_HOSTS = ['solists.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0', 'solists.com', '.herokuapp.com', '*']
 
@@ -180,7 +180,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True 
 ACCOUNT_UNIQUE_EMAIL = True 
 
-CRISPY_TEMPLATE_PACK  ='uni_form'
+CRISPY_TEMPLATE_PACK  ='bootstrap4'
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = str(BASE_DIR.joinpath('media'))

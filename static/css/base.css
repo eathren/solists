@@ -1,13 +1,14 @@
-html {
+html,
+body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 1.25rem;
   overflow: scroll;
+  height: 100%;
 }
 
 body {
   background-color: #fafafa;
   margin: 0px;
-  min-height: 100vh;
 }
 
 a {
@@ -29,6 +30,7 @@ a {
 .container {
   height: 100%;
   margin: 50px;
+  padding: 20px;
 }
 
 .navbar-container {
@@ -117,22 +119,80 @@ a {
   height: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  align-self: center;
   margin: 0 auto;
 }
 
 .card {
-  padding: 30px;
-  background-color: snow;
-  border: 1px solid grey;
-  border-radius: 8px;
+  padding: 35px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: white;
+  /* border: 1px solid grey; */
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  min-width: 50%;
+  max-width: 700px;
+  min-height: 400px;
+  flex-direction: column;
 }
 
 .card-color {
   background-color: #86bfde !important;
   color: #095883 !important;
+}
+
+.card-button {
+  width: 80%;
+  margin: 30px auto 0px;
+  text-align: center;
+  background-color: #3789b3;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.listing-button-group {
+  /* border: 1px solid #86bfde;
+  max-width: fit-content;
+  margin: 0 !important; */
+}
+
+.listing-button-left {
+  border-radius: 8px 0px 0px 8px;
+  border: 1px solid#3789b3;
+  color: #3789b3;
+  padding: 10px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+.listing-button-right {
+  border-radius: 0px 8px 8px 0px;
+  border: 1px solid #3789b3;
+  background-color: #3789b3;
+  padding: 10px;
+  font-size: 0.95rem;
+  color: white;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+.listing-button-left:hover {
+  background-color: #ddebf1;
+  border: 1px solid #2a6b8b;
+}
+
+.listing-button-right:hover {
+  background-color: #286583;
+  border: 1px solid #286583;
 }
 
 .normalize {

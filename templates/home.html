@@ -14,7 +14,7 @@
   <div class="listing-body">
     <div class="listing-background-primary">
 
-      <p p-header-listing> <a href="{{ lead.get_absolute_url }}">{{lead.title}}</a></p>
+      <p class="p-header-listing"> <a href="{{ lead.get_absolute_url }}">{{lead.title}}</a></p>
       <div>
         <div class="p-header-listing-secondary">
           Red
@@ -30,8 +30,11 @@
         Full Time
       </div>
       </p>
-      <button>Apply Now</button>
-      <button>More Info</button>
+      <div class="listing-button-group">
+        <a class="listing-button-left" href="{{ lead.get_absolute_url }}">APPLY NOW</a>
+        <a class="listing-button-right" href="{{ lead.get_absolute_url }}">MORE INFO</a>
+      </div>
+
     </div>
   </div>
 </div>
