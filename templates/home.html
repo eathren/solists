@@ -8,6 +8,14 @@
   Solists is a remote work job board for <b> software developers </b> and <b> designers </b>.
 </p>
 <hr>
+
+{% for lead in lead_list %}
+<div>
+  <h2> <a href="{{ lead.get_absolute_url }}">{{lead.title}}</a></h2>
+</div>
+{% endfor %}
+{% endblock content %}
+
 <!-- {% if user.is_authenticated %}
 <p>Hi {{ user.email }}!</p>
 <p><a href="{% url 'account_logout' %}">Log Out</a></p>
@@ -19,11 +27,3 @@
 <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
   <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
 </form> -->
-
-
-{% for lead in lead_list %}
-<div>
-  <h2> <a href="{{ lead.get_absolute_url }}">{{lead.title}}</a></h2>
-</div>
-{% endfor %}
-{% endblock content %}

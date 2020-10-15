@@ -180,7 +180,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True 
 ACCOUNT_UNIQUE_EMAIL = True 
 
-CRISPY_TEMPLATE_PACK  ='bootstrap4'
+CRISPY_TEMPLATE_PACK  ='uni_form'
 
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
@@ -202,3 +202,4 @@ STRIPE_TEST_SECRET_KEY = env('STRIPE_TEST_SECRET_KEY')
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 
 django_heroku.settings(locals())
+
