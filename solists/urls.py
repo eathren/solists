@@ -28,9 +28,9 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')), # new
 
     # Local apps
+    path('', include('leads.urls')),
     path('', include('pages.urls')),
     # changed from leads/ briefly
-    path('leads/', include('leads.urls')),
     path('orders/', include('orders.urls'))
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 

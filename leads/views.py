@@ -7,17 +7,17 @@ from .models import Lead
 class LeadListView(ListView):
     model = Lead
     context_object_name = "lead_list"
-    template_name = 'lead_list.html'
+    template_name = 'home.html'
 
 class LeadDetailView(DetailView):
     model = Lead
     context_object_name = "lead"
-    template_name = 'leads/lead_detail.html'
+    template_name = 'lead_detail.html'
 
 class SearchResultsView(ListView): # new
     model = Lead
     context_object_name = 'lead_list'
-    template_name = 'leads/search_results.html'
+    template_name = 'search_results.html'
 
     def get_queryset(self): # new
         query = self.request.GET.get('q')
