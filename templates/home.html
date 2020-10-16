@@ -13,24 +13,32 @@
 <div class="listing">
   <div class="listing-body">
     <div class="listing-background-primary">
-
-      <p class="p-header-listing">
-        <a class="p-header-link" href="{{ lead.get_absolute_url }}">{{lead.title}}
-        </a>
-      </p>
+      <div class="listing-header">
+        <p class="p-header-listing">
+          <a class="p-header-link" href="leads{{ lead.get_absolute_url }}">
+            {{lead.title}}
+          </a>
+        </p>
+        <div class="p-header-listing-date">
+          <p>
+            {{lead.created_at | timesince}} ago
+          </p>
+        </div>
+      </div>
       <div>
         <div class="p-header-listing-secondary">
-          Red
+          {{ lead.company}}
+
         </div>
         <p class="listing-skill">
-          Test
+          {{lead.job_type}}
         </p>
       </div>
     </div>
     <div class="listing-background-secondary">
       <p class="p-color-emphasis">
       <div class="listing-job-type">
-        Full Time
+        {{lead.skills}}
       </div>
       </p>
       <div class="listing-button-group">
