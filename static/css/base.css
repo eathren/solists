@@ -208,10 +208,16 @@ a {
 .p-header-listing {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #292929;
+  color: #292929 !important;
   margin-bottom: 1px;
   padding-bottom: 1px;
   line-height: 1.5;
+  font-weight: 100;
+}
+
+.p-header-link {
+  color: #292929 !important;
+  font-weight: 600;
 }
 
 .p-header-listing-secondary {
