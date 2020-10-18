@@ -28,6 +28,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')), # new
 
     # Local apps
+    path('', include('users.urls')),
     path('', include('leads.urls')),
     path('', include('pages.urls')),
     # changed from leads/ briefly

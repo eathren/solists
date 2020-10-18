@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+
+{% block title %}
+Solists | Developers
+{% endblock title %}
+
+{% block content %}
+{% for developer in developer_list %}
+<div>
+    <h2> <a href="{{ developer.get_absolute_url }}">{{developer.first_name}} {{developer.last_name}}</a></h2>
+</div>
+{% endfor %}
+{% endblock content %}
