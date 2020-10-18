@@ -6,8 +6,10 @@ Solists | Developers
 
 {% block content %}
 {% for developer in developer_list %}
+{% if developer.developer %}
 <div>
     <h2> <a href="{{ developer.get_absolute_url }}">{{developer.first_name}} {{developer.last_name}}</a></h2>
 </div>
+{% endif %}
 {% endfor %}
 {% endblock content %}

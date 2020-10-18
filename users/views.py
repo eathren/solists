@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
@@ -19,3 +19,7 @@ class DeveloperListView(ListView):
     model = CustomUser
     context_object_name = "developer_list"
     template_name = "developers/developer_list.html"
+
+class ProfilePageView(TemplateView):
+    model = CustomUser
+    template_name = "account/profile.html"

@@ -23,6 +23,7 @@ django-environ = "==0.4.5"
 environs = "==8.0.0"
 requests = "*"
 python-dotenv = "*"
+django-countries = "*"
 
 [requires]
 python_version = "3.8"
