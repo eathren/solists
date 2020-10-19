@@ -27,6 +27,8 @@ a {
   color: white;
 }
 
+
+
 :root {
   --container-width: 960px;
 }
@@ -45,6 +47,13 @@ a {
 .navbar-container {
   height: 100%;
   width: 100%;
+}
+
+.navbar-background{
+  background-color: #3789b3 !important;
+}
+
+.active:hover{
 }
 
 .navbar-main {
