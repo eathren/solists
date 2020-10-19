@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% block title %}
+Soilists | Profile
+{% endblock %}
+{% if error_message %}
+<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+{% block content %}
+<p>Hi {{ user.email }}!</p>
+<form method="post">
+    <button class="card-button" type="submit">Update</button>
+
+</form>
+{% endblock content %}

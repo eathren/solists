@@ -1,5 +1,7 @@
 from django.views.generic import ListView, DetailView
 from django.db.models import Q
+from django.views import generic
+from django.urls import reverse_lazy
 
 # Create your views here.
 from .models import Lead
@@ -24,3 +26,7 @@ class SearchResultsView(ListView): # new
         return Lead.objects.filter(
             Q(title__icontains=query) | Q(author__icontains=query)
         )
+
+class PostLeadView(generic.CreateView):
+    model = Lead
+    success_url = reverse_lazy('<uuid:pk>')

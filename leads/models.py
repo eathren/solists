@@ -166,7 +166,9 @@ class Lead(models.Model):
     def __str__(self):
         return self.title
     
-    def get_absolute_url(self):
-        return reverse("lead_detail", kwargs={'pk': str(self.pk)})
+    class Meta:
+        indexes = [
+            models.Index(fields=['id'], name='id_index')
+        ]
 
     

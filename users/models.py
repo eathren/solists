@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 from django.contrib.auth.models import AbstractUser
 from django_countries.fields import CountryField
 from multiselectfield import MultiSelectField
@@ -6,6 +7,10 @@ from multiselectfield import MultiSelectField
 # Create your models here.
 
 class CustomUser(AbstractUser):
+    id = models.UUIDField(
+        primary_key = True,
+        default = uuid.uuid4,
+        editable = False)
     developer = models.BooleanField(default = False)
     designer = models.BooleanField( default = False)
     country = CountryField(blank_label='(select country)')
@@ -128,4 +133,14 @@ class CustomUser(AbstractUser):
     )
     skills = MultiSelectField(
         choices=LEAD_SKILLS, max_choices=45, max_length=1000, blank=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['id'], name='user_id_index')
+        ]
+    
+    class Meta:
+        indexes = [
+            models.Index(fields=['id'], name='user_id_index')
+        ]
 
