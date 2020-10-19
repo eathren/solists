@@ -4,12 +4,24 @@
 {% endblock title %}
 {% block content %}
 <div class="lead-detail">
+
     {% if lead.logo %}
     <img class="lead-logo" src="{{ lead.logo.url}}" alt="{{ lead.title }}">
     {% endif %}
-    <h2>
+    <h1>
         {{lead.title}}
-    </h2>
-    <p> Author: {{lead.author}} </p>
+    </h1>
+    <p> <b>Company:</b> {{lead.company}} </p>
+    <p><b>Skills :</b> {{ lead.skills}}</p>
+    <p><b> Job Type:</b> {{ lead.job_type }}</p>
+    <p> {{lead.description}}</p>
+    {% if lead.developer %}
+
+
+    {% endif %}
+
+
+
+    <p><b> Created at:</b> {{lead.created_at}}</p>
 </div>
 {% endblock content %}
