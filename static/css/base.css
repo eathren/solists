@@ -31,6 +31,10 @@ a {
   --container-width: 960px;
 }
 
+.container {
+  height: 100%;
+}
+
 .container-custom {
   height: 100%;
   margin: 50px;
@@ -124,6 +128,10 @@ a {
   color: white;
 }
 
+.text-heavy {
+  font-weight: 900;
+}
+
 .container-centered {
   /* height: 100%; */
   margin: 0 auto;
@@ -154,7 +162,7 @@ a {
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
-  min-height: 400px;
+  min-height: 300px;
   /* flex-direction: column; */
 }
 
