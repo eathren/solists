@@ -129,5 +129,3 @@ class CustomUser(AbstractUser):
     skills = MultiSelectField(
         choices=LEAD_SKILLS, max_choices=45, max_length=1000, blank=True)
 
-
-    pass
