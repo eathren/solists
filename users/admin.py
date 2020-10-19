@@ -14,7 +14,7 @@ from .models import CustomUser
 class CustomUserAdmin(UserAdmin):
     fieldsets = (
        (None, {'fields': ('email', 'password', )}),
-    ('Personal info', {'fields': ('first_name', 'last_name', 'published', 'developer', 'designer', 'experience', 'country', 'job_type', 'skills')}),
+    ('Personal info', {'fields': ('first_name', 'last_name', 'published', 'developer', 'designer','description', 'experience', 'country', 'job_type', 'skills')}),
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),

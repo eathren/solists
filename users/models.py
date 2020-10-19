@@ -14,6 +14,7 @@ class CustomUser(AbstractUser):
     published = models.BooleanField(default = False)
     developer = models.BooleanField(default = False)
     designer = models.BooleanField( default = False)
+    description = models.TextField(blank=True)
     country = CountryField(blank_label='(select country)')
     EMPLOYMENT_TYPE = (
         ('Full-time', 'Full-time'),
