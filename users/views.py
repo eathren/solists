@@ -17,11 +17,6 @@ class SignupPageView(generic.CreateView):
     template_name = 'signup.html'
 
 
-class DeveloperListView(ListView):
-    model = CustomUser
-    context_object_name = "developer_list"
-    template_name = "developers/developer_list.html"
-   
 
 class ProfilePageView(generic.UpdateView):
     form_class = CustomUserChangeForm
@@ -31,7 +26,12 @@ class ProfilePageView(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
-class ProfileDetailView(DetailView):
+class DeveloperListView(ListView):
     model = CustomUser
-    context_object_name = "user"
+    context_object_name = "developer_list"
+    template_name = "developers/developer_list.html"
+
+class DeveloperDetailView(DetailView):
+    model = CustomUser
+    context_object_name = "developer"
     template_name = 'developers/profile.html'

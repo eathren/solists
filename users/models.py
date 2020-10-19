@@ -11,6 +11,7 @@ class CustomUser(AbstractUser):
         primary_key = True,
         default = uuid.uuid4,
         editable = False)
+    published = models.BooleanField(default = False)
     developer = models.BooleanField(default = False)
     designer = models.BooleanField( default = False)
     country = CountryField(blank_label='(select country)')
@@ -139,8 +140,5 @@ class CustomUser(AbstractUser):
             models.Index(fields=['id'], name='user_id_index')
         ]
     
-    class Meta:
-        indexes = [
-            models.Index(fields=['id'], name='user_id_index')
-        ]
+    
 

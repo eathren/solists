@@ -7,7 +7,8 @@ Solists | Jobs
 {% block content %}
 {% for lead in lead_list %}
 <div>
-    <h2> <a href="{{ lead.get_absolute_url }}">{{lead.title}}</a></h2>
+    <h2> <a href="{{ lead.id }}">{{lead.title}}</a></h2>
+    {{lead.id}}
 </div>
 {% endfor %}
 {% endblock content %}
