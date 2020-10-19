@@ -6,14 +6,15 @@ from multiselectfield import MultiSelectField
 
 # Create your models here.
 
+
 class CustomUser(AbstractUser):
     id = models.UUIDField(
-        primary_key = True,
-        default = uuid.uuid4,
-        editable = False)
-    published = models.BooleanField(default = False)
-    developer = models.BooleanField(default = False)
-    designer = models.BooleanField( default = False)
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
+    published = models.BooleanField(default=False)
+    developer = models.BooleanField(default=False)
+    designer = models.BooleanField(default=False)
     description = models.TextField(blank=True)
     country = CountryField(blank_label='(select country)')
     EMPLOYMENT_TYPE = (
@@ -140,6 +141,3 @@ class CustomUser(AbstractUser):
         indexes = [
             models.Index(fields=['id'], name='user_id_index')
         ]
-    
-    
-

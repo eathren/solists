@@ -2,25 +2,35 @@ import uuid
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from django_countries.fields import CountryField
+
+
 from multiselectfield import MultiSelectField
 # Create your models here.
+
+
 class Lead(models.Model):
     ordering = ['created_at']
     user_author = models.ForeignKey(
         get_user_model(),
-        on_delete = models.CASCADE,
-        related_name = "author"
+        on_delete=models.CASCADE,
+        related_name="author"
     )
+    developer = models.BooleanField(default=False)
+    designer = models.BooleanField(default=False)
+    description = models.TextField(blank=True)
+    country = CountryField(blank_label='(select country)')
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
     company = models.CharField(max_length=100, blank=True, default='')
-    logo = models.ImageField(upload_to = 'logos/', blank=True)
-    author = models.CharField(max_length = 200)
+    logo = models.ImageField(upload_to='logos/', blank=True)
+    author = models.CharField(max_length=200)
+    contact_info = models.CharField(max_length=100, blank=True)
     id = models.UUIDField(
-        primary_key = True,
-        default = uuid.uuid4,
-        editable = False)
-    title=models.CharField(max_length=200)
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
+    title = models.CharField(max_length=200)
 
     EMPLOYMENT_TYPE = (
         ('Full-time', 'Full-time'),
@@ -162,13 +172,6 @@ class Lead(models.Model):
         indexes = [
             models.Index(fields=['id'], name='id_index')
         ]
-    
+
     def __str__(self):
         return self.title
-    
-    class Meta:
-        indexes = [
-            models.Index(fields=['id'], name='id_index')
-        ]
-
-    
