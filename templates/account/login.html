@@ -4,16 +4,42 @@
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-<div class="container-centered">
+<div class="row justify-content-center">
+  <div class="col ">
 
-  <div class="card">
+    <div class=" container-card align-items-center  justify-content-center">
+      <div class="card">
 
-    <h2>Login</h2>
-    <form method="post">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <button class="card-button" type="submit">Log In</button>
-    </form>
+
+        <h1 class="center">Login</h1>
+        <br />
+
+        <form method="post" class="uniForm">
+          {% csrf_token %}
+          {{ form  | crispy }}
+
+          <button class="card-button" type="submit">LOGIN</button>
+        </form>
+        <br />
+        <div class="row align-items-end">
+          <div class="col-sm"></div>
+          <div class="col-sm center"> <a href="" class="center">Forgot Password?</a> </div>
+        </div>
+      </div>
+      <br />
+      <div class="row ">
+        <div class="col"></div>
+        <div class="col align-self-end">
+
+          <p class="center"> Don't have an account?
+            <a href="google.com">
+
+              REGISTER
+            </a>
+        </div>
+      </div>
+      </p>
+    </div>
   </div>
 </div>
 {% endblock content %}
