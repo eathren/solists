@@ -89,7 +89,7 @@ class Lead(models.Model):
         ('Cryptocurrency', 'Cryptocurrency'),
         ('DevOps', 'DevOps'),
         ('Docker', 'Docker'),
-        ('Django ', 'Django '),
+        ('Django', 'Django'),
         ('Django Rest Framework', 'Django Rest Framework'),
         ('Docker', 'Docker'),
         ('Elasticsearch', 'Elasticsearch'),
