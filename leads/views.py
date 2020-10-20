@@ -2,7 +2,7 @@ from django.views.generic import ListView, DetailView, UpdateView, CreateView
 from django.db.models import Q
 from django.views import generic
 from django.urls import reverse_lazy
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import LeadCreationForm
 
 # Create your views here.
@@ -33,7 +33,7 @@ class SearchResultsView(ListView):  # new
         )
 
 
-class PostLeadView(CreateView):
+class PostLeadView(LoginRequiredMixin, CreateView):
     form_class = LeadCreationForm
     model = Lead
     success_url = reverse_lazy('home')
