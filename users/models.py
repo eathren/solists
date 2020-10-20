@@ -144,6 +144,9 @@ class CustomUser(AbstractUser):
     skills = MultiSelectField(
         choices=LEAD_SKILLS, max_choices=45, max_length=1000, blank=True)
 
+    def get_absolute_url(self):
+        return "/developers/{}".format(self.id)
+
     class Meta:
         indexes = [
             models.Index(fields=['id'], name='user_id_index')
