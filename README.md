@@ -1,6 +1,6 @@
 ## Jobboard written in Django ( And also migrating to Django from React / Django / DRF)
 
-![Netlify](https://img.shields.io/netlify/a71ca40d-f524-4c22-8ea2-9d42c6fdf177) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-GNU%203.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 
 Let's be real. Most of us hate the job hunt process (I certainly do). Some of the sites are confusing, applying is difficult, and there is a definite lack of quality control for jobs posted and their formatting. Solists is a step in the direction of fixing some of those problems.
 
@@ -40,3 +40,6 @@ To test stripe functionality, use a stripe_test key (that you create @ stripe.co
 ### Notes and gotchas
 
 Procfile has to have a capital P. Otherwise it doesn't work on heroku.
+
+### License:
+GNU General Public License v3.0
