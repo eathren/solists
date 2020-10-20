@@ -14,58 +14,64 @@
 <hr>
 
 {% for lead in lead_list %}
-<div class="listing">
-  <div class="listing-body">
-    <div class="listing-background-primary">
-      <div class="listing-header">
-        <p class="p-header-listing">
-          <a class="p-header-link" href="{{lead.get_absolute_url}}">
-            {{lead.title}}
-          </a>
-        </p>
-        <div class="p-header-listing-date">
-          <p>
-            {{lead.created_at | timesince }} ago
+<form class="" action="{% url 'search_results' %}" method="get">
+  <div class="listing">
+    <div class="listing-body">
+      <div class="listing-background-primary">
+        <div class="listing-header">
+          <p class="p-header-listing">
+            <a class="p-header-link" href="{{lead.get_absolute_url}}">
+              {{lead.title}}
+            </a>
+          </p>
+          <div class="p-header-listing-date">
+            <p>
+              {{lead.created_at | timesince }} ago
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="p-header-listing-secondary">
+            <input type="submit" name="q" class=" listing-button listing-tertiary-button btn " value="{{lead.company}}">
+            <span>
+              -
+            </span> <input type="submit" name="q" class=" listing-button listing-tertiary-button btn "
+              value="{{lead.country}}">
+          </div>
+          <p class="listing-skill">
+            {% for job in lead.job_type %}
+            <input type="submit" name="q" class=" listing-button  listing-primary-button  btn "
+              value="{{lead.job_type}}">
+            {% endfor %}
           </p>
         </div>
       </div>
-      <div>
-        <div class="p-header-listing-secondary">
-          {{ lead.company}} - {{lead.country}}
-        </div>
-        <p class="listing-skill">
-          {{lead.job_type}}
-        </p>
-      </div>
-    </div>
 
-    <div class="listing-background-secondary">
-      <p class="p-color-emphasis">
-      <div class="listing-job-type">
-        <!-- {{lead.skills}} -->
-        <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
+      <div class="listing-background-secondary">
+        <p class="p-color-emphasis">
+        <div class="listing-job-type">
+          <!-- {{lead.skills}} -->
+
           {% for skill in lead.skills %}
-          <button name="q" class=" listing-button listing-secondary-button btn ">
-            {{skill}}
-          </button>
-
+          <input type="submit" name="q" class=" listing-button listing-secondary-button btn " value="{{skill}}">
           {% endfor %}
-        </form>
+
+
+        </div>
+        </p>
+        <div class="listing-button-group">
+          {% if lead.application_link %}
+          <a class="listing-button-left btn" href="{{ lead.application_link }}">APPLY NOW</a>
+          {% else %}
+          <a class="listing-button-left btn" href="{{ lead.contact_info }}">CONTACT US</a>
+          {% endif %}
+          <a class="listing-button-right btn" href="{{ lead.get_absolute_url }}">MORE INFO</a>
+        </div>
 
       </div>
-      </p>
-      <div class="listing-button-group">
-        {% if lead.application_link %}
-        <a class="listing-button-left btn" href="{{ lead.application_link }}">APPLY NOW</a>
-        {% else %}
-        <a class="listing-button-left btn" href="{{ lead.contact_info }}">CONTACT US</a>
-        {% endif %}
-        <a class="listing-button-right btn" href="{{ lead.get_absolute_url }}">MORE INFO</a>
-      </div>
-
     </div>
   </div>
-</div>
+</form>
 {% endfor %}
 {% endblock content %}
 
