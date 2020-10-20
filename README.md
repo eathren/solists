@@ -6,11 +6,13 @@ Post about why this project exists can be found [here](https://www.nolanbraman.c
 
 ---
 
+
+
 Let's be real. Most of us hate the job hunt process (I certainly do). Some of the sites are confusing, applying is difficult, and there is a definite lack of quality control for jobs posted and their formatting. Solists is a step in the direction of fixing some of those problems.
 
 Right now the 1.0 MVP is written in  Django and postres, having transitioned from a React + DRF codebase I previously had been working on. 
 
-![solists screenshot](https://imgur.com/D07TbuM)
+![solists screenshot](https://i.imgur.com/D07TbuM.png )
 
 ### Features currently live:
 
