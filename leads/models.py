@@ -3,8 +3,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django_countries.fields import CountryField
-from tinymce.models import HTMLField
-
+from ckeditor.fields import RichTextField
 
 from multiselectfield import MultiSelectField
 # Create your models here.
@@ -19,7 +18,7 @@ class Lead(models.Model):
     )
     developer = models.BooleanField(default=False)
     designer = models.BooleanField(default=False)
-    description = HTMLField()
+    description = RichTextField()
     country = CountryField(blank_label='(select country)')
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)

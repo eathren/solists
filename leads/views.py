@@ -13,6 +13,8 @@ class LeadListView(ListView):
     model = Lead
     context_object_name = "lead_list"
     template_name = 'home.html'
+    paginate_by = 10
+    ordering=['-created_at']
 
 
 class LeadDetailView(DetailView):

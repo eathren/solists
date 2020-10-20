@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'debug_toolbar',
     'django_countries',
-     'tinymce',
+     'ckeditor',
 
     #  Local
     'users.apps.UsersConfig',
@@ -184,7 +184,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 CRISPY_TEMPLATE_PACK  ='bootstrap4'
 
-# MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
 # MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
 # Stripe
@@ -203,8 +203,10 @@ STRIPE_TEST_SECRET_KEY = env('STRIPE_TEST_SECRET_KEY')
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 
-TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/{}/tinymce/5/tinymce.min.js'.format(env('TINY_API_KEY'))
-TINYMCE_COMPRESSOR = False
+# TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/{}/tinymce/5/tinymce.min.js'.format(env('TINY_API_KEY'))
+# TINYMCE_COMPRESSOR = False
+
+CKEDITOR_ALLOW_NONIMAGE_FILES = False
 
 django_heroku.settings(locals())
 
