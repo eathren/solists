@@ -1,14 +1,20 @@
 {% extends '_base.html' %}
 
-{% block title %}Search{% endblock title %}
+{% block title %}Solists | Search{% endblock title %}
 
 {% block content %}
-<h1>Search Results</h1>
-
-<!-- {% for lead in lead_list %}
+<h2>Search Results</h2>
+<hr>
+{% for lead in lead_list %}
 <div>
-    <h3><a href="{{ lead.id }}">{{ lead.title }}</a></h3>
-
+    <h3><a href="{{ lead.get_absolute_url }}">{{ lead.title }}</a></h3>
+    {{lead.get_absolute_url}}
+    <br>
+    {{lead.id}}
 </div>
-{% endfor %} -->
+{% empty %}
+<p>No results found.</p>
+{% endfor %}
+
+
 {% endblock content %}

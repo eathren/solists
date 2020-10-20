@@ -169,10 +169,14 @@ class Lead(models.Model):
     skills = MultiSelectField(
         choices=LEAD_SKILLS, max_choices=45, max_length=1000, blank=True)
     
-    class Meta:
-        indexes = [
-            models.Index(fields=['id'], name='id_index')
-        ]
+    # class Meta:
+    #     indexes = [
+    #         models.Index(fields=['id'], name='id_index')
+    #     ]
+
+    def get_absolute_url(self):
+        return "/leads/{}".format(self.id)
+        #  return reverse('leads', args=[str(self.id)])
 
     def __str__(self):
         return self.title

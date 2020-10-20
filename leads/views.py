@@ -23,15 +23,15 @@ class LeadDetailView(DetailView):
     template_name = 'leads/lead_detail.html'
 
 
-class SearchResultsView(ListView):  # new
+class SearchResultsView(ListView):  
     model = Lead
     context_object_name = 'lead_list'
-    template_name = 'search_results.html'
+    template_name = 'leads/search_results.html'
     # queryset = Lead.objects.filter(title__icontains="react")
-    def get_queryset(self):  # new
+    def get_queryset(self):  
         query = self.request.GET.get('q')
         return Lead.objects.filter(
-            Q(title__icontains=query) | Q(skills=query)
+            Q(title__icontains=query) | Q(skills=query) | Q(country=query)
         )
 
 
