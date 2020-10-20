@@ -17,6 +17,13 @@ class CustomUser(AbstractUser):
     designer = models.BooleanField(default=False)
     description = models.TextField(blank=True)
     country = CountryField(blank_label='(select country)')
+    job_title = models.CharField(max_length = 200, blank=True, )
+    linkedin = models.CharField(max_length = 200, blank=True, )
+    github = models.CharField(max_length = 200, blank=True, )
+    website = models.CharField(max_length = 200, blank=True, )
+    contact_email =  models.CharField(max_length = 200, blank=True, )
+    allow_contact = models.BooleanField(default=False)
+    stackoverflow = models.CharField(max_length = 200, blank=True, )
     EMPLOYMENT_TYPE = (
         ('Full-time', 'Full-time'),
         ('Part-time', 'Part-time'),

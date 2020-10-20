@@ -27,6 +27,7 @@ class Lead(models.Model):
     logo = models.ImageField(upload_to='logos/', blank=True)
     author = models.CharField(max_length=200)
     contact_info = models.CharField(max_length=100, blank=True)
+    application_link = models.CharField(max_length=100, blank=True)
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,

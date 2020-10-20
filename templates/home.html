@@ -27,14 +27,14 @@
       </div>
       <div>
         <div class="p-header-listing-secondary">
-          {{ lead.company}}
-
+          {{ lead.company}} - {{lead.country}}
         </div>
         <p class="listing-skill">
           {{lead.job_type}}
         </p>
       </div>
     </div>
+
     <div class="listing-background-secondary">
       <p class="p-color-emphasis">
       <div class="listing-job-type">
@@ -42,7 +42,11 @@
       </div>
       </p>
       <div class="listing-button-group">
-        <a class="listing-button-left btn" href="{{ lead.get_absolute_url }}">APPLY NOW</a>
+        {% if lead.application_link %}
+        <a class="listing-button-left btn" href="{{ lead.application_link }}">APPLY NOW</a>
+        {% else %}
+        <a class="listing-button-left btn" href="{{ lead.contact_info }}">CONTACT US</a>
+        {% endif %}
         <a class="listing-button-right btn" href="leads/{{ lead.id }}">MORE INFO</a>
       </div>
 

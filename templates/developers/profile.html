@@ -1,9 +1,12 @@
 {% extends '_base.html' %} {% block title %} Solists | Profile |
-{{developer.first_name}} {{developer.last_name}} {% endblock %} 
+{{developer.first_name}} {{developer.last_name}} {% endblock %}
 
 
 {% block content%}
 <h2>{{developer.first_name}} {{developer.last_name}}</h2>
+{% if developer.job_title %}
+<h2> {{developer.job_title}}</h2>
+{% else %}
 {% if developer.developer %}
 <h3> Developer </h3>
 {% else %}
@@ -12,11 +15,34 @@
 <h3> Designer </h3>
 {% else %}
 {% endif %}
+{% endif %}
+{% if developer.linkedin %}
+<a class="btn fa-icon" href="{{developer.linkedin}}"><i class="fa  fa-icon fa-2x fa-linkedin-square"
+                style="color: black;" aria-hidden="true"></i>
+</a>
+{% endif %}
+{% if developer.github %}
+<a class="btn fa-icon" href="{{developer.github}}"><i class="fa  fa-icon fa-2x fa-github-square" style="color: black;"
+                aria-hidden="true"></i>
+</a>
+{% endif %}
+{%  if developer.website %}
+
+<a class="btn fa-icon" href="{{developer.website}}"><i class="fa  fa-icon fa-2x fa-globe" style="color: black;"
+                aria-hidden="true"></i> </a>
+{% endif %}
+{% if developer.stackoverflow %}
+<a class="btn fa-icon" href="{{developer.stackoverflow}}"><i class="fa  fa-icon fa-2x fa-stack-overflow"
+                style="color: black;" aria-hidden="true"></i></a>
+{% endif %}
 <p> <b>Current Location:</b> {{developer.country}}</p>
 
 {% if developer.description %}
 <p> <b> Summary: </b> {{developer.description}}</p>
 {% endif %}
-<p> <b> Skills: </b>{{developer.skills}}  </p>
-<button class="btn btn"> Contact </button>
+<p> <b> Skills: </b>{{developer.skills}} </p>
+{% if developer.allow_contact and developer.contact_email %}
+<hr>
+<a class="card-button card-button-small " href="mailto:{{developer.contact_email}}"> Contact </a>
+{% endif %}
 {% endblock content %}

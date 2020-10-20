@@ -11,4 +11,4 @@ class LeadCreationForm(forms.ModelForm):
     class Meta():
         model = Lead
         fields = ('title', 'user_author', 'logo', 'company',  'description', 'job_type', 'experience',
-                  'developer', 'designer', 'country',   'skills', 'contact_info')
+                  'developer', 'designer', 'country',   'skills', 'contact_info', 'application_link')
