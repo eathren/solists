@@ -4,6 +4,10 @@
 {% block title %}Solists | Work Remotely {% endblock title %}
 
 {% block content %}
+
+
+
+
 <p class="p-header">
   Solists is a remote work job board for <b> software developers </b> and <b> designers</b>.
 </p>
@@ -21,7 +25,7 @@
         </p>
         <div class="p-header-listing-date">
           <p>
-            {{lead.created_at | timesince}} ago
+            {{lead.created_at | timesince }} ago
           </p>
         </div>
       </div>
@@ -38,7 +42,15 @@
     <div class="listing-background-secondary">
       <p class="p-color-emphasis">
       <div class="listing-job-type">
-        {{lead.skills}}
+        <!-- {{lead.skills}} -->
+
+        {% for skill in lead.skills %}
+        <button class=" listing-button listing-secondary-button btn ">
+          {{skill}}
+        </button>
+
+        {% endfor %}
+
       </div>
       </p>
       <div class="listing-button-group">
