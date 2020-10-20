@@ -19,7 +19,7 @@
     <div class="listing-background-primary">
       <div class="listing-header">
         <p class="p-header-listing">
-          <a class="p-header-link" href="leads.get_absolute_url">
+          <a class="p-header-link" href="{{lead.get_absolute_url}}">
             {{lead.title}}
           </a>
         </p>
@@ -59,7 +59,7 @@
         {% else %}
         <a class="listing-button-left btn" href="{{ lead.contact_info }}">CONTACT US</a>
         {% endif %}
-        <a class="listing-button-right btn" href="leads.get_absolute_url">MORE INFO</a>
+        <a class="listing-button-right btn" href="{{ lead.get_absolute_url }}">MORE INFO</a>
       </div>
 
     </div>
