@@ -40,3 +40,6 @@ To test stripe functionality, use a stripe_test key (that you create @ stripe.co
 ### Notes and gotchas
 
 Procfile has to have a capital P. Otherwise it doesn't work on heroku.
+
+### License:
+GNU General Public License v3.0
