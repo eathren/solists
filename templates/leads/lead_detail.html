@@ -4,24 +4,25 @@
 {% endblock title %}
 {% block content %}
 <div class="lead-detail">
+    <div class="card">
 
-    {% if lead.logo %}
-    <img class="lead-logo" src="{{ lead.logo.url}}" alt="{{ lead.title }}">
-    {% endif %}
-    <h1>
-        {{lead.title}}
-    </h1>
-    <p> <b>Company:</b> {{lead.company}} </p>
-    <p><b>Skills :</b> {{ lead.skills}}</p>
-    <p><b> Job Type:</b> {{ lead.job_type }}</p>
-    <p> {{lead.description}}</p>
-    {% if lead.developer %}
+        {% if lead.logo %}
+        <img class="lead-logo" src="{{ lead.logo.url}}" alt="{{ lead.title }}">
+        {% endif %}
+        <h1>
+            {{lead.title}}
+        </h1>
+        <p> <b>Company:</b> {{lead.company}} </p>
+        <p><b>Skills :</b> {{ lead.skills}}</p>
+        <p><b> Job Type:</b> {{ lead.job_type }}</p>
+        <hr />
+        {% autoescape off %}
+        <p> {{lead.description}}</p>
+        {% endautoescape %}
+        <hr />
+        <p><b> Created at:</b> {{lead.created_at}}</p>
+        <button class="btn card-button"> Apply </button>
+    </div>
 
-
-    {% endif %}
-
-
-
-    <p><b> Created at:</b> {{lead.created_at}}</p>
 </div>
 {% endblock content %}

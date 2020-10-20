@@ -31,6 +31,7 @@ urlpatterns = [
     path('', include('users.urls')),
     path('', include('leads.urls')),
     path('', include('pages.urls')),
+    path('tinymce/', include('tinymce.urls')),
     # changed from leads/ briefly
     path('orders/', include('orders.urls'))
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
