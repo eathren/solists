@@ -10,5 +10,5 @@ from .models import Lead
 class LeadCreationForm(forms.ModelForm):
     class Meta():
         model = Lead
-        fields = ('title', 'user_author', 'logo', 'company', 'description', 'job_type', 'experience',
+        fields = ('title', 'user_author', 'logo', 'company',  'description', 'job_type', 'experience',
                   'developer', 'designer', 'country',   'skills', 'contact_info')

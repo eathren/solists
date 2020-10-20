@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'debug_toolbar',
     'django_countries',
+     'tinymce',
 
     #  Local
     'users.apps.UsersConfig',

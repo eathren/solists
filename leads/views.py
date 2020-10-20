@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, UpdateView, CreateView
 from django.db.models import Q
 from django.views import generic
 from django.urls import reverse_lazy
@@ -33,8 +33,13 @@ class SearchResultsView(ListView):  # new
         )
 
 
-class PostLeadView(generic.CreateView):
+class PostLeadView(CreateView):
     form_class = LeadCreationForm
     model = Lead
     success_url = reverse_lazy('home')
     template_name = 'leads/create_lead.html'
+
+# class UpdateLeadView(UpdateView):
+#     model = Lead
+#     template_name='leads/update_lead.html'
+#     fields = ['title', 'description', 'body']

@@ -24,6 +24,7 @@ environs = "==8.0.0"
 requests = "*"
 python-dotenv = "*"
 django-countries = "*"
+django-tinymce = "*"
 
 [requires]
 python_version = "3.8"

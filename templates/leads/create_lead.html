@@ -4,9 +4,10 @@
 {% endblock  %}
 {% block content %}
 <form method="post">
-{% csrf_token %}
-{{form|crispy}}
-<button class="card-button" type="submit">SUBMIT</button>
+    {% csrf_token %}
+    {{form.media}}
+    {{form|crispy}}
+    <button class="card-button" type="submit">SUBMIT</button>
 
 </form>
 {% endblock content %}
