@@ -19,13 +19,16 @@ Right now the 1.0 MVP is written in  Django and postres, having transitioned fro
 User sign up  
 User login  
 User job creation  
-Job search  
-Developers listing (names only on sub-pages at the moment)
+User Customizable Profile Page
+Developer pages
+listing sub-pages
+postgresdb
+UI/UX for job-creation experience
+Stripe payments & system
+
 
 ### Features upcoming for 1.0 MVP release
-
-improved developer pages  
-user profile updates  
+Job search 
 search bar  
 better job-creation experience  
 user and skill search for jobs
