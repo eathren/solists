@@ -43,13 +43,14 @@
       <p class="p-color-emphasis">
       <div class="listing-job-type">
         <!-- {{lead.skills}} -->
+        <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
+          {% for skill in lead.skills %}
+          <button name="q" class=" listing-button listing-secondary-button btn ">
+            {{skill}}
+          </button>
 
-        {% for skill in lead.skills %}
-        <button class=" listing-button listing-secondary-button btn ">
-          {{skill}}
-        </button>
-
-        {% endfor %}
+          {% endfor %}
+        </form>
 
       </div>
       </p>

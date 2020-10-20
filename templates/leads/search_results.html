@@ -8,9 +8,6 @@
 {% for lead in lead_list %}
 <div>
     <h3><a href="{{ lead.get_absolute_url }}">{{ lead.title }}</a></h3>
-    {{lead.get_absolute_url}}
-    <br>
-    {{lead.id}}
 </div>
 {% empty %}
 <p>No results found.</p>
