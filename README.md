@@ -4,6 +4,8 @@
 
 Post about why this project exists can be found [here](https://www.nolanbraman.com/100%20hours%20of%20django/)
 
+---
+
 Let's be real. Most of us hate the job hunt process (I certainly do). Some of the sites are confusing, applying is difficult, and there is a definite lack of quality control for jobs posted and their formatting. Solists is a step in the direction of fixing some of those problems.
 
 Right now the 1.0 MVP is written in React / Django / Django Rest Framework. This repo is my work transitioning the project to 100% Django.
