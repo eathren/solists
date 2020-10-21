@@ -77,35 +77,19 @@
               </li>
           </div>
           </ul>
-          <!-- {% comment %} <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> {% endcomment %} -->
+
         </div>
         </div>
 
       </nav>
 
-      <!-- {% comment %} <nav class="navbar-main">
-        <div class="navbar-container">
-          <div class="navbar-flex">
 
-            <a href="{% url 'home' %}" class="normalize navbar-main-items text-white">SOLISTS</a>
-            <div class="navbar-main-center">
-              <a class="color-white normalize navbar-main-items" href="{% url 'home' %}">FIND JOBS</a>
-              <a class="color-white normalize navbar-main-items" href="{% url 'developers' %}">FIND DEVELOPERS</a>
-              <a class="color-white normalize navbar-main-items" href="{% url 'account_logout' %}">POST A JOB</a>
-            </div>
-            <div class="navbar-main-right">
+      {% if user.is_authenticated %}
 
-              {% if user.is_authenticated %}
-
-              <!-- <button type="button" class="btn btn-default" aria-label="Left Align"> -->
       <a class="normalize text-white icon-hover-fix" href="{% url 'profile' %}">
 
         <i class="fas fa-user-circle"></i>
       </a>
-      <!-- </button> -->
       <a class="color-white normalize navbar-main-items" href="{% url 'account_logout' %}">LOGOUT</a>
       {% else %}
 
@@ -116,7 +100,7 @@
       </div>
       </div>
       </div>
-      </nav> {% endcomment %} -->
+      </nav>
       </div>
 
     </header>
@@ -128,13 +112,11 @@
     </div>
     <!-- Compiled and minified JavaScript -->
     <!-- jQuery and JS bundle w/ Popper.js -->
-    {% comment %}
-    <script src="{% static 'js/bootstrap.min.js'%}"></script> {% endcomment %}
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
-    {% comment %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script> {% endcomment %}
+      crossorigin="anonymous"></script>
   </body>
 
 </html>
