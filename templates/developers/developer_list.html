@@ -7,20 +7,27 @@ Solists | Developers
 {% block content %}
 {% for developer in developer_list %}
 {% if developer.published %}
-<div>
+<div class="card">
+
     <!--  was {{developer.get_absolute_url}} -->
 
     <h2> <a href="{{developer.get_absolute_url}}" class="normalize">
             {{developer.first_name}} {{developer.last_name}}</a></h2>
     <p>
-        Current Location: {{developer.country}}
+        <b>Current Location:</b> {{developer.country}}
     </p>
+    {% if developer.skills %}
     <p>
-
-        Skills: {{developer.skills}}
+        <b>Skills:</b> {{developer.skills}}
     </p>
-    <hr />
+    {% endif %}
+    <hr>
+    <p class="p-subtext">
+        <b>Joined:</b> {{developer.date_joined| date:"M. d,   Y"}}
+    </p>
 </div>
+<br>
+
 {% endif %}
 {% endfor %}
 {% endblock content %}
