@@ -277,10 +277,12 @@ a {
 }
 
 .listing-header {
-  display: flex;
+  /* removed css to use bootstrap media query floats.  */
+  /* display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: row; */
   margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .p-header-listing {
@@ -289,16 +291,18 @@ a {
   color: #292929;
   margin-bottom: 1px;
   padding-bottom: 1px;
+  padding-left: 8px;
 }
 
 .p-header-listing-date {
-  float: right;
+  /* float: right; */
   color: #5f5f5f;
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 1px;
   padding-bottom: 1px;
   font-weight: 100;
+  padding-left: 8px;
 }
 .p-header-link {
   color: #292929 !important;
@@ -381,19 +385,42 @@ a {
 }
 .listing .listing-background-primary {
   background-color: white;
-  min-height: 50px;
-  padding: 20px;
+  min-height: 40px;
+  padding: 20px 20px 15px 20px;
 }
+
 .listing .listing-background-secondary {
   background-color: #f2fbff;
-  min-height: 50px;
+  min-height: 40px;
   height: 100%;
-  padding: 20px;
+  padding: 20px 20px 15px 20px;
   width: 100%;
   -moz-border-radius: 0 0 9px 9px;
 }
 .listing .listing-background-secondary .listing-bottom {
   border-radius: 10px;
+}
+@media only screen and (max-width: 1199px) {
+  .listing-header {
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+  .listing .listing-background-primary {
+    background-color: white;
+    padding: 15px 15px 1px 15px;
+  }
+  .listing .listing-background-secondary {
+    background-color: #f2fbff;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    -moz-border-radius: 0 0 9px 9px;
+  }
+  .listing-button {
+    padding: 2px;
+    margin: 2px;
+    font-size: 0.9rem;
+  }
 }
 
 .input-form {

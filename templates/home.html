@@ -19,15 +19,24 @@
     <div class="listing-body">
       <div class="listing-background-primary">
         <div class="listing-header">
-          <p class="p-header-listing">
-            <a class="p-header-link" href="{{lead.get_absolute_url}}">
-              {{lead.title}}
-            </a>
-          </p>
-          <div class="p-header-listing-date">
-            <p>
-              {{lead.created_at | timesince }} ago
-            </p>
+          <div class="row w-100">
+            <div class="col-12 col-lg-6">
+
+
+              <p class="p-header-listing">
+                <a class="p-header-link" href="{{lead.get_absolute_url}}">
+                  {{lead.title}}
+                </a>
+              </p>
+            </div>
+            <div class="col-12 col-lg-6">
+
+              <div class="p-header-listing-date float-lg-right">
+                <p>
+                  {{lead.created_at | timesince }} ago
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <div>
@@ -48,7 +57,7 @@
       </div>
 
       <div class="listing-background-secondary">
-        <p class="p-color-emphasis">
+        <!-- <p class="p-color-emphasis"> -->
         <div class="listing-job-type">
           <!-- {{lead.skills}} -->
 
@@ -58,7 +67,6 @@
 
 
         </div>
-        </p>
         <div class="listing-button-group">
           {% if lead.application_link %}
           <a class="listing-button-left btn" href="{{ lead.application_link }}">APPLY NOW</a>
@@ -67,6 +75,7 @@
           {% endif %}
           <a class="listing-button-right btn" href="{{ lead.get_absolute_url }}">MORE INFO</a>
         </div>
+        <!-- </p> -->
 
       </div>
     </div>

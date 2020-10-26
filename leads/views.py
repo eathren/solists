@@ -31,7 +31,7 @@ class SearchResultsView(ListView):
     def get_queryset(self):  
         query = self.request.GET.get('q')
         return Lead.objects.filter(
-            Q(title__icontains=query) | Q(company__icontains=query) | Q(country__icontains=query) | Q(skills__icontains=query) | Q(country=query)
+            Q(title__icontains=query) | Q(job_type__icontains=query) | Q(company__icontains=query) | Q(country__icontains=query) | Q(skills__icontains=query) | Q(country=query)
         )
 
 
