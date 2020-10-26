@@ -400,6 +400,12 @@ a {
 .listing .listing-background-secondary .listing-bottom {
   border-radius: 10px;
 }
+@media only screen and (max-width: 800px) {
+  .card {
+    padding: 15px;
+  }
+}
+
 @media only screen and (max-width: 1199px) {
   .listing-header {
     padding: 0px;
