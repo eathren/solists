@@ -19,6 +19,14 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.views.generic.base import RedirectView
+from django.contrib.sitemaps.views import sitemap
+from leads.sitemaps import LeadSitemap
+from users.sitemaps import UserSitemap
+sitemaps = {
+        "leads": LeadSitemap,
+        "uses": UserSitemap
+}
+
 urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico'))),
     # Django ad
@@ -33,7 +41,9 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('tinymce/', include('tinymce.urls')),
     # changed from leads/ briefly
-    path('orders/', include('orders.urls'))
+    path('orders/', include('orders.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+                        name='django.contrib.sitemaps.views.sitemap')
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
 if settings.DEBUG:

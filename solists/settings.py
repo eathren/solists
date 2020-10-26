@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # sitemap for seo
     'django.contrib.sites',
+    'django.contrib.sitemaps',
     # 3rd party          
     'crispy_forms',
     'multiselectfield',
