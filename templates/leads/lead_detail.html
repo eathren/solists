@@ -1,7 +1,18 @@
 {% extends '_base.html' %}
+<!-- 
+<head>
+    <meta name="description" property="description"
+        content="Job posting at Solists.com for {{lead.title}} at {{lead.company}}">
+    <meta name="keywords" property="keywords" content="solists.com, software, developer, {{lead.skills}} ">
+
+</head> -->
+
 {% block title %}
-{{lead.title}}
+Solists | {{lead.title}} at {{lead.company}}
 {% endblock title %}
+{% block description %}
+Test
+{% endblock description %}
 {% block content %}
 <div class="lead-detail">
     <div class="card">

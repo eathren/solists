@@ -4,7 +4,7 @@ from .models import CustomUser
 
 class UserSitemap(Sitemap):
     changefreq = "weekly"
-    priority = 0.9
+    priority = 0.3
 
     def items(self):
             return CustomUser.objects.all()

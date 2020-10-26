@@ -26,7 +26,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env.bool('DEBUG')
 # DEBUG = True
 
-ALLOWED_HOSTS = ['solists.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0', 'solists.com', '.herokuapp.com', '*']
+ALLOWED_HOSTS = [ 'solists.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0', 'solists.com', '.herokuapp.com', '*']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # sitemap for seo
-    'django.contrib.sites',
     'django.contrib.sitemaps',
+    'django.contrib.sites',
     # 3rd party          
     'crispy_forms',
     'multiselectfield',
@@ -171,7 +171,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 # django-allauth config
 LOGIN_REDIRECT_URL = 'home'
 ACCOUNT_LOGOUT_REDIRECT = 'home' 
-SITE_ID = 1 
+SITE_ID = 7 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend', 
