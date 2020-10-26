@@ -24,7 +24,7 @@ from leads.sitemaps import LeadSitemap
 from users.sitemaps import UserSitemap
 sitemaps = {
         "leads": LeadSitemap,
-        "uses": UserSitemap
+        "users": UserSitemap
 }
 
 urlpatterns = [
