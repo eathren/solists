@@ -4,6 +4,11 @@
 {% block title %}Charge{% endblock title %}
 
 {% block content %}
-<h2>Thank you for your order! You now have access to
-    <a href="{% url 'lead_list' %}">All Leads</a>.</h2>
+<div class="card">
+
+    <h2>Thank you for your order! You can see your posting at
+        <br>
+        <a href="{% url 'home' %}">solists.com homepage</a> after it finishes our review.
+    </h2>
+</div>
 {% endblock content %}

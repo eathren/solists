@@ -3,12 +3,15 @@
 {% block title %}Orders{% endblock title %}
 
 {% block content %}
-<h1>Orders page</h1>
-<p>Buy for $24.99</p>
-<form action="{% url 'charge' %}" method="post">
-    {% csrf_token %}
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ stripe_key }}"
-        data-description="All Leads" data-amount="3900" data-locale="auto">
-        </script>
-</form>
+<div class="card">
+
+    <h1>Confirm your order</h1>
+    <p>Buy for $14.99</p>
+    <form action="{% url 'charge' %}" method="post">
+        {% csrf_token %}
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ stripe_key }}"
+            data-description="Post a Job" data-amount="1499" data-locale="auto">
+            </script>
+    </form>
+</div>
 {% endblock content %}
