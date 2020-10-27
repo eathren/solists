@@ -10,6 +10,7 @@ from .models import Lead
 
 
 class LeadListView(ListView):
+    queryset = Lead.objects.filter(status=1).order_by('-created_at')
     model = Lead
     context_object_name = "lead_list"
     template_name = 'home.html'
@@ -40,6 +41,10 @@ class PostLeadView(LoginRequiredMixin, CreateView):
     model = Lead
     success_url = reverse_lazy('home')
     template_name = 'leads/create_lead.html'
+
+    def form_valid(self, form):
+        form.instance.user_author = self.request.user
+        return super().form_valid(form)
 
 # class UpdateLeadView(UpdateView):
 #     model = Lead

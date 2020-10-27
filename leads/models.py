@@ -8,9 +8,13 @@ from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
 # Create your models here.
 
+STATUS = (
+    (0,"Draft"),
+    (1,"Publish")
+)
 
 class Lead(models.Model):
-    ordering = ['created_at']
+    ordering = ['-created_at']
     user_author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
@@ -24,9 +28,11 @@ class Lead(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     company = models.CharField(max_length=100, blank=True, default='')
     logo = models.ImageField(upload_to='logos/', blank=True)
-    author = models.CharField(max_length=200)
+    author = models.CharField(max_length=200, blank=True)
     contact_info = models.CharField(max_length=100, blank=True)
     application_link = models.CharField(max_length=100, blank=True)
+    status = models.IntegerField(choices=STATUS, default=0)
+
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
