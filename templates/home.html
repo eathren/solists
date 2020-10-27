@@ -49,8 +49,7 @@
           </div>
           <p class="listing-skill">
             {% for job in lead.job_type %}
-            <input type="submit" name="q" class=" listing-button  listing-primary-button  btn "
-              value="{{lead.job_type}}">
+            <input type="submit" name="q" class=" listing-button  listing-primary-button  btn " value="{{job}}">
             {% endfor %}
           </p>
         </div>
