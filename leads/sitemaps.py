@@ -6,7 +6,7 @@ class LeadSitemap(Sitemap):
     priority = 0.9
 
     def items(self):
-            return Lead.objects.all()
+            return Lead.objects.filter(status=1)
 
     def lastmod(self, obj):
             return obj.updated_at
