@@ -203,7 +203,7 @@ STRIPE_TEST_SECRET_KEY = env('STRIPE_TEST_SECRET_KEY')
 # CACHE_MIDDLEWARE_KEY_PREFIX = ''
 
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 
 # TINYMCE_JS_URL = 'https://cdn.tiny.cloud/1/{}/tinymce/5/tinymce.min.js'.format(env('TINY_API_KEY'))
 # TINYMCE_COMPRESSOR = False
