@@ -187,7 +187,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 CRISPY_TEMPLATE_PACK  ='bootstrap4'
 
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
+MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
 # Stripe
 STRIPE_TEST_PUBLISHABLE_KEY = env('STRIPE_TEST_PUBLISHABLE_KEY')

@@ -5,13 +5,20 @@
 {% block title %} Solists | Post a Job
 {% endblock  %}
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{form.media}}
-    {{form|crispy}}
+<div class="container-sm">
 
 
-    <button class="card-button" type="submit">Continue to Payment</button>
+    <h2 class="center"> Post a Job </h2>
+    <hr>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        {{form.media}}
+        {% crispy form %}
 
-</form>
+
+        <button class="card-button" type="submit">Continue to Payment</button>
+
+    </form>
+</div>
 {% endblock content %}
