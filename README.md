@@ -1,5 +1,5 @@
 ## Jobboard written in Django ( And also migrating to Django from React / Django / DRF)
-
+### 1.0 MVP is live!
 [![License](https://img.shields.io/badge/License-GNU%203.0-blue.svg)](https://opensource.org/licenses/GPL-3.0)
 
 Post about why this project exists can be found [here](https://www.nolanbraman.com/100%20hours%20of%20django/)
@@ -25,13 +25,13 @@ listing sub-pages
 postgresdb
 UI/UX for job-creation experience
 Stripe payments & system
-
-
-### Features upcoming for 1.0 MVP release
 Job search 
 search bar  
 better job-creation experience  
 user and skill search for jobs
+
+
+
 
 ### Starting the instance
 
