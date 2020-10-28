@@ -12,7 +12,7 @@
     <form method="post">
         {% csrf_token %}
         {{form|crispy}}
-
+        <a href="/accounts/password/change/"> Change Password </a>
         <button type="submit" class="card-button">Submit</button>
     </form>
 </div>

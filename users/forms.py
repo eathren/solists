@@ -16,6 +16,8 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ('email', 'username' )
 
 class CustomUserChangeForm(UserChangeForm):
+    # hides password field that userchangeform includes by default
+    password = None
 
     class Meta(UserChangeForm):
         model = CustomUser

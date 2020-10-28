@@ -34,7 +34,7 @@ urlpatterns = [
     path('ad-other/', admin.site.urls),
 
     # User management
-    path('accounts/', include('allauth.urls')), # new
+    path('accounts/', include('allauth.urls')), 
 
     # Local apps
     path('', include('users.urls')),
