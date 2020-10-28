@@ -22,6 +22,7 @@ class ProfilePageView(generic.UpdateView):
     form_class = CustomUserChangeForm
     success_url = reverse_lazy('profile')
     template_name = 'account/profile.html'
+    context_object_name = "developer"
 
     def get_object(self):
         return self.request.user

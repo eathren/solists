@@ -4,10 +4,14 @@
 {% if user.is_authenticated %}
 
 <!-- <p>Hi {{ user.email }}!</p> -->
+<h2 class='center'> Update Account </h2>
+<hr>
+<br>
+<a href="developers/{{developer.get_absolute_url}}" class="float-right">See how your page appears to other users</a><br>
 <div class="card">
     <form method="post">
         {% csrf_token %}
-        {{ form|crispy }}
+        {{form|crispy}}
 
         <button type="submit" class="card-button">Submit</button>
     </form>
