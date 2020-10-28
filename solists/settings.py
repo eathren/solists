@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'debug_toolbar',
     'django_countries',
-     'ckeditor',
+    'ckeditor',
 
     #  Local
     'users.apps.UsersConfig',
@@ -87,6 +87,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'solists.context_processors.google_analytics'
             ],
         },
     },
@@ -210,7 +211,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CKEDITOR_ALLOW_NONIMAGE_FILES = False
 
-
+GOOGLE_ANALYTICS_KEY = os.environ.get("GOOGLE_ANALYTICS_KEY")
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend" 
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
