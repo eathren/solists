@@ -214,7 +214,13 @@ CKEDITOR_ALLOW_NONIMAGE_FILES = False
 
 EMAIL_BACKEND = "sendgrid_backend.SendgridBackend" 
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+# Toggle sandbox mode (when running in DEBUG mode)
+# SENDGRID_SANDBOX_MODE_IN_DEBUG=True
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 
+DEFAULT_FROM_EMAIL = 'admin@solists.com'
+
+SENDGRID_ECHO_TO_STDOUT=True
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
