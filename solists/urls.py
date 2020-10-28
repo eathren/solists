@@ -22,6 +22,7 @@ from django.views.generic.base import RedirectView
 from django.contrib.sitemaps.views import sitemap
 from leads.sitemaps import LeadSitemap
 from users.sitemaps import UserSitemap
+
 sitemaps = {
         "leads": LeadSitemap,
         "users": UserSitemap
