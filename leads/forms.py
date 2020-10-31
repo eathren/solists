@@ -11,7 +11,7 @@ from .models import Lead
 class LeadCreationForm(forms.ModelForm):
     class Meta():
         model = Lead
-        fields = ('title',  'logo', 'company',  'description', 'job_type', 'experience',
+        fields = ('title',  'company',  'description', 'job_type', 'experience',
                   'developer', 'designer', 'country',   'skills', 'contact_info', 'application_link')
         exclude = ["user_author"]
        

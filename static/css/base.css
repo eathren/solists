@@ -61,6 +61,27 @@ a {
   padding: 10px;
 }
 
+.text-red {
+  color: red;
+}
+
+del {
+  color: red !important;
+}
+
+.text-grey {
+  color: grey;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+button.stripe-button-el,
+button.stripe-button-el > span {
+  background-color: #3789b3 !important;
+  background-image: none;
+  font-size: 1rem;
+}
+
 .navbar-main {
   /* max-width: var(--container-width); */
   height: 65px;

@@ -62,7 +62,6 @@ a {
 }
 
 .text-red {
-  text-decoration: line-through !important;
   color: red;
 }
 

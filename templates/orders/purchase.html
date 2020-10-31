@@ -6,12 +6,22 @@
 <div class="card">
 
     <h1>Confirm your order</h1>
-    <p>Buy for $14.99</p>
+    <div class="alert alert-primary" role="alert">
+        Launch sale! 60% off for all postings until November 1st!
+    </div>
+    <p>Buy for <del class="text-red">
+            $25.99</del> <span class="bade badge-pill badge-primary">
+
+            $14.99!
+        </span>
+    </p>
     <form action="{% url 'charge' %}" method="post">
         {% csrf_token %}
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ stripe_key }}"
             data-description="Post a Job" data-amount="1499" data-locale="auto">
             </script>
+        <p class="text-grey"> Payments through Stripe.com</p>
     </form>
+
 </div>
 {% endblock content %}
