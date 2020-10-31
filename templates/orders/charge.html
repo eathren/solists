@@ -6,9 +6,16 @@
 {% block content %}
 <div class="card">
 
-    <h2>Thank you for your order! You can see your posting at
-        <br>
-        <a href="{% url 'home' %}">solists.com homepage</a> after it finishes our review.
-    </h2>
+    <h2>Thank you for your order! </h2>
+    <h4>
+
+        <br>You can see your posting at
+
+        <a href="{% url 'home' %}">solists.com homepage</a> after it finishes our review.*
+    </h4>
+    <p class='text-grey'>
+
+        If it does not pass, we will issue a full refund.
+    </p>
 </div>
 {% endblock content %}
