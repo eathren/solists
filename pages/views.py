@@ -9,3 +9,6 @@ class TermsOfServicePageView(TemplateView):
 
 class PrivacyPolicyPageView(TemplateView):
     template_name="privacy_policy.html"
+
+class SupportPageView(TemplateView):
+    template_name="support.html"

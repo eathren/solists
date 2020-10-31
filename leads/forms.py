@@ -7,13 +7,15 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column
 from .models import Lead
 
-
 class LeadCreationForm(forms.ModelForm):
+    
     class Meta():
         model = Lead
         fields = ('title',  'company',  'description', 'job_type', 'experience',
                   'developer', 'designer', 'country',   'skills', 'contact_info', 'application_link')
         exclude = ["user_author"]
+      
+      
        
         # def __init__(self, *args, **kwargs):
         #     super().__init__(*args, **kwargs)
