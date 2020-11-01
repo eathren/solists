@@ -14,7 +14,7 @@ Solists | Developers
     <h2> <a href="{{developer.get_absolute_url}}" class="normalize">
             {{developer.first_name}} {{developer.last_name}}</a></h2>
     <p>
-        <b>Current Location:</b> {{developer.country}}
+        <b>Current Location:</b> {{developer.country.name}}
     </p>
     {% if developer.skills %}
     <p>

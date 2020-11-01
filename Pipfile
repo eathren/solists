@@ -24,7 +24,6 @@ environs = "==8.0.0"
 requests = "*"
 python-dotenv = "*"
 django-countries = "*"
-django-tinymce = "*"
 django-ckeditor = "*"
 django-sendgrid-v5 = "*"
 

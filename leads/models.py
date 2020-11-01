@@ -9,9 +9,10 @@ from multiselectfield import MultiSelectField
 # Create your models here.
 
 STATUS = (
-    (0,"Draft"),
-    (1,"Publish")
+    (0, "Draft"),
+    (1, "Publish")
 )
+
 
 class Lead(models.Model):
     ordering = ['-created_at']
@@ -20,10 +21,13 @@ class Lead(models.Model):
         on_delete=models.CASCADE,
         related_name="author"
     )
+    salary_range = models.CharField(
+        max_length=100, blank=True, help_text="Ex: $70,000 - $80,000")
     developer = models.BooleanField(default=False)
     designer = models.BooleanField(default=False)
     description = RichTextField()
-    country = CountryField(blank_label='(select country)')
+    country = CountryField(
+        blank_label='(select country)')
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
     company = models.CharField(max_length=100, blank=True, default='')
@@ -174,7 +178,7 @@ class Lead(models.Model):
     )
     skills = MultiSelectField(
         choices=LEAD_SKILLS, max_choices=45, max_length=1000, blank=True)
-    
+
     class Meta:
         indexes = [
             models.Index(fields=['id'], name='id_index')
