@@ -26,6 +26,7 @@ python-dotenv = "*"
 django-countries = "*"
 django-ckeditor = "*"
 django-sendgrid-v5 = "*"
+django-tinymce = "*"
 
 [requires]
 python_version = "3.8"
