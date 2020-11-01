@@ -12,7 +12,7 @@ class CustomUser(AbstractUser):
         primary_key=True,
         default=uuid.uuid4,
         editable=False)
-    published = models.BooleanField(default=False)
+    published = models.BooleanField(default=False, help_text="Your profile will only show up in the developer list if this is checked.")
     developer = models.BooleanField(default=False)
     designer = models.BooleanField(default=False)
     description = models.TextField(blank=True)
@@ -63,8 +63,7 @@ class CustomUser(AbstractUser):
         ('CSS3', 'CSS3'),
         ('Cryptocurrency', 'Cryptocurrency'),
         ('DevOps', 'DevOps'),
-        ('Docker', 'Docker'),
-        ('Django ', 'Django '),
+        ('Django', 'Django'),
         ('Django Rest Framework', 'Django Rest Framework'),
         ('Docker', 'Docker'),
         ('Elasticsearch', 'Elasticsearch'),
@@ -75,6 +74,7 @@ class CustomUser(AbstractUser):
         ('Fullstack Development', 'Fullstack Development'),
         ('Gatsby.js', 'Gatsby.js'),
         ('Git', 'Git'),
+        ('Go', 'Go'),
         ('Google Cloud Platform', 'Google Cloud Platform'),
         ('GraphQL', 'GraphQL'),
         ('Gunicorn', 'Gunicorn'),
@@ -95,6 +95,7 @@ class CustomUser(AbstractUser):
         ('Mercurial', 'Mercurial'),
         ('Microsoft Azure', 'Microsoft Azure'),
         ('MongoDB', 'MongoDB'),
+        ('MySQL', 'MySQL'),
         ('Natural Language Processing', 'Natural Language Processing'),
         ('.NET', '.NET'),
         ('Nginx', 'Nginx'),
@@ -111,6 +112,7 @@ class CustomUser(AbstractUser):
         ('React.js', 'React.js'),
         ('React Native', 'React Native'),
         ('REST', 'REST'),
+        ('Rust', 'Rust'),
         ('SaltStack', 'SaltStack'),
         ('Sass', 'Sass'),
         ('Scala', 'Scala'),
@@ -150,4 +152,4 @@ class CustomUser(AbstractUser):
     class Meta:
         indexes = [
             models.Index(fields=['id'], name='user_id_index')
-        ]
+        ] 

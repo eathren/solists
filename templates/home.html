@@ -29,15 +29,14 @@
                 <a class="p-header-link" href="{{lead.get_absolute_url}}">
                   {{lead.title}}
                 </a>
+
               </p>
             </div>
             <div class="col-12 col-lg-6">
 
-              <div class="p-header-listing-date float-lg-right">
-                <p>
-                  {{lead.created_at | timesince }} ago
-                </p>
-              </div>
+              <p class="p-header-listing-date float-lg-right">
+                {{lead.created_at | timesince }} ago
+              </p>
             </div>
           </div>
         </div>
@@ -53,6 +52,9 @@
             {% for job in lead.job_type %}
             <input type="submit" name="q" class=" listing-button  listing-primary-button  btn " value="{{job}}">
             {% endfor %}
+            <!-- {% if lead.salary_range %}
+            {{lead.salary_range}}
+            {% endif %} -->
           </span>
         </div>
       </div>

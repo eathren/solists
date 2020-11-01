@@ -5,25 +5,26 @@
 {% block title %} Solists | Post a Job
 {% endblock  %}
 {% block content %}
-<div >
+<h2 class="center"> Post a Job </h2>
+<div class="alert alert-info" role="alert">
+    Job postings may be denied if: <br>
+    <ul>
+        <li>
+            We could not find enough information for the job
+        </li>
+        <li>
+            Salary is not listed somewhere in the posting
+        </li>
+        <li>
+            The job is not remote
+        </li>
+    </ul>
+</div>
+<hr>
+<div class="card">
 
 
-    <h2 class="center"> Post a Job </h2>
-    <div class="alert alert-info" role="alert">
-        Job postings may be denied if: <br>
-        <ul>
-            <li>
-                We could not find enough information for the job
-            </li>
-            <li>
-                Salary is not listed somewhere in the posting
-            </li>
-            <li>
-                The job is not remote
-            </li>
-        </ul>
-    </div>
-    <hr>
+
     <br>
     <form method="post">
         {% csrf_token %}

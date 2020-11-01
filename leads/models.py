@@ -22,19 +22,20 @@ class Lead(models.Model):
         related_name="author"
     )
     salary_range = models.CharField(
-        max_length=100, blank=True, help_text="Ex: $70,000 - $80,000")
+        max_length=100, blank=True, help_text="Ex: $70,000 - $80,000", verbose_name="Annual Salary")
     developer = models.BooleanField(default=False)
     designer = models.BooleanField(default=False)
     description = RichTextField()
+    how_to_apply= RichTextField(verbose_name="How To Apply?", blank=True)
     country = CountryField(
-        blank_label='(select country)')
+        blank_label='(Select Country)', blank=True, help_text="If the job is constrained to one country, please select it" )
     created_at = models.DateTimeField(auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(auto_now=True)
     company = models.CharField(max_length=100, blank=True, default='')
     logo = models.ImageField(upload_to='logos/', blank=True)
     author = models.CharField(max_length=200, blank=True)
-    contact_info = models.CharField(max_length=100, blank=True)
-    application_link = models.CharField(max_length=100, blank=True)
+    contact_info = models.CharField(max_length=100, blank=True, help_text="This email is public. The apply button defaults to it if you do not supply an Apply Url")
+    application_link = models.CharField(max_length=100, blank=True, verbose_name="Application URL")
     status = models.IntegerField(choices=STATUS, default=0)
 
     id = models.UUIDField(
@@ -59,15 +60,16 @@ class Lead(models.Model):
         ('Intern', 'Intern'),
     )
     experience = MultiSelectField(
-        choices=EXPERIENCE_LEVEL, max_choices=4, max_length=200, blank=True)
+        choices=EXPERIENCE_LEVEL, max_choices=4, max_length=200, blank=True, help_text="You can select more than one")
 
     ROLE_TYPE = (
         ('Developer', 'Developer'),
         ('Designer', 'Designer'),
+        ('DevOps', 'DevOps'),
 
     )
     role = MultiSelectField(
-        choices=ROLE_TYPE, max_choices=2, max_length=200, blank=True)
+        choices=ROLE_TYPE, max_choices=2, max_length=200, blank=True, verbose_name="Role Type", help_text="This will dictate who gets shown what posts, as well as in searches")
 
     REMOTE_TYPE = (
         ('Remote', 'Remote'),
@@ -98,7 +100,6 @@ class Lead(models.Model):
         ('CSS3', 'CSS3'),
         ('Cryptocurrency', 'Cryptocurrency'),
         ('DevOps', 'DevOps'),
-        ('Docker', 'Docker'),
         ('Django', 'Django'),
         ('Django Rest Framework', 'Django Rest Framework'),
         ('Docker', 'Docker'),
@@ -110,6 +111,7 @@ class Lead(models.Model):
         ('Fullstack Development', 'Fullstack Development'),
         ('Gatsby.js', 'Gatsby.js'),
         ('Git', 'Git'),
+        ('Go', 'Go'),
         ('Google Cloud Platform', 'Google Cloud Platform'),
         ('GraphQL', 'GraphQL'),
         ('Gunicorn', 'Gunicorn'),
@@ -130,6 +132,7 @@ class Lead(models.Model):
         ('Mercurial', 'Mercurial'),
         ('Microsoft Azure', 'Microsoft Azure'),
         ('MongoDB', 'MongoDB'),
+        ('MySQL', 'MySQL'),
         ('Natural Language Processing', 'Natural Language Processing'),
         ('.NET', '.NET'),
         ('Nginx', 'Nginx'),
@@ -146,6 +149,7 @@ class Lead(models.Model):
         ('React.js', 'React.js'),
         ('React Native', 'React Native'),
         ('REST', 'REST'),
+        ('Rust', 'Rust'),
         ('SaltStack', 'SaltStack'),
         ('Sass', 'Sass'),
         ('Scala', 'Scala'),

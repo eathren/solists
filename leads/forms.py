@@ -13,7 +13,7 @@ class LeadCreationForm(forms.ModelForm):
     class Meta():
         model = Lead
         fields = ('title',  'company',  'description',  'job_type', 'experience', 'salary_range',
-                  'developer', 'designer', 'country',   'skills', 'contact_info', 'application_link')
+                  'role', 'country',   'skills', 'how_to_apply', 'application_link', 'contact_info',  )
         exclude = ["user_author"]
 
         # def __init__(self, *args, **kwargs):
