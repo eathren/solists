@@ -21,6 +21,9 @@ Solists | Developers
         <b>Skills:</b> {{developer.skills}}
     </p>
     {% endif %}
+    {% if developer.experience %}
+    <b>Experience:</b> {{developer.experience}}
+    {% endif %}
     <hr>
     <p class="p-subtext">
         <b>Joined:</b> {{developer.date_joined| date:"M. d,   Y"}}

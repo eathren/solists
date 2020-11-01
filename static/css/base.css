@@ -290,6 +290,11 @@ button.stripe-button-el > span {
   border: 1px solid #286583;
 }
 
+.listing-skill {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .normalize {
   text-decoration: none;
 }
