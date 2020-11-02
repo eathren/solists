@@ -497,3 +497,7 @@ button.stripe-button-el > span {
 .asteriskField {
   display: none;
 }
+
+.django-ckeditor-widget {
+  width: 100%;
+}

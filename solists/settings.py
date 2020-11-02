@@ -168,6 +168,19 @@ STATICFILES_FINDERS = [
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            [ 'Format', 'Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink', "SpecialChar","-","Blockquote", "Maximize",],
+            ['RemoveFormat', 'Source']
+        ],
+        'width': '100%'
+    },
+}
 
 # django-allauth config
 LOGIN_REDIRECT_URL = 'home'
