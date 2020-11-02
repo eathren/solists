@@ -35,7 +35,7 @@ class Lead(models.Model):
     logo = models.ImageField(upload_to='logos/', blank=True)
     author = models.CharField(max_length=200, blank=True)
     contact_info = models.CharField(max_length=100, blank=True, help_text="This email is public. The apply button defaults to it if you do not supply an Apply Url")
-    application_link = models.CharField(max_length=100, blank=True, verbose_name="Application URL")
+    application_link = models.CharField(max_length=100, blank=True, verbose_name="Application URL", help_text="Ex: https://www.yoursite.com/apply")
     status = models.IntegerField(choices=STATUS, default=0)
 
     id = models.UUIDField(
