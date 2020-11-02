@@ -29,10 +29,11 @@ class ProfilePageView(generic.UpdateView):
 
 class DeveloperListView(ListView):
     model = CustomUser
+    queryset = CustomUser.objects.filter(published=1).order_by('-date_joined')
     context_object_name = "developer_list"
     template_name = "developers/developer_list.html"
     paginate_by = 40
-    ordering=['-date_joined']
+      
 
 class DeveloperDetailView(DetailView):
     model = CustomUser
