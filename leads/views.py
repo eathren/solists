@@ -4,7 +4,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import LeadCreationForm
-
+from django.core.paginator import Paginator
 # Create your views here.
 from .models import Lead
 
@@ -14,9 +14,8 @@ class LeadListView(ListView):
     model = Lead
     context_object_name = "lead_list"
     template_name = 'home.html'
-    paginate_by = 10
+    paginate_by = 20
     ordering=['-created_at']
-     
 
 
 

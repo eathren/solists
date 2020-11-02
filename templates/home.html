@@ -84,7 +84,34 @@
     </div>
   </div>
 </form>
+
 {% endfor %}
+{% if is_paginated %}
+<ul class="pagination justify-content-center">
+  {% if page_obj.has_previous %}
+  <li class="page-item ">
+    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+  </li>
+  {% else %}
+  <li class="page-item" class="disabled"><span class="page-link">Previous</span></li>
+  {% endif %}
+  {% for i in paginator.page_range %}
+  {% if page_obj.number == i %}
+  <li class="page-item  "><span class="page-link active-primary-1">{{ i }} <span
+        class="sr-only page-link">(current)</span></span>
+  </li>
+  {% else %}
+  <li class="page-item"><a class="page-link " href="?page={{ i }}">{{ i }}</a></li>
+  {% endif %}
+  {% endfor %}
+  {% if page_obj.has_next %}
+  <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+  {% else %}
+  <li class="page-item" class="disabled"><a href="#" class=" page-link">Next</a></li>
+  {% endif %}
+</ul>
+{% endif %}
+
 {% endblock content %}
 
 <!-- {% if user.is_authenticated %}

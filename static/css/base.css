@@ -20,6 +20,11 @@ a {
   text-decoration: none;
 }
 
+.active-primary-1 {
+  background-color: #3789b3 !important;
+  color: white !important;
+}
+
 .icon-hover-fix:hover {
   text-decoration: none;
 }
