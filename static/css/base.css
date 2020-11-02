@@ -228,6 +228,7 @@ button.stripe-button-el > span {
 
 .card-user {
   padding: 35px;
+  margin-bottom: 10px;
   color: rgba(0, 0, 0, 0.87);
   background-color: white;
   /* border: 1px solid grey; */
