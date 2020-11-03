@@ -6,8 +6,16 @@ body {
   min-height: 100%;
 }
 
+p {
+  color: #454545;
+}
+
+b {
+  color: rgb(37, 37, 37);
+}
+
 body {
-  background-color: #fafafa;
+  background-color: #eeeeee;
   margin: 0px;
 }
 
@@ -154,12 +162,28 @@ button.stripe-button-el > span {
 .navbar-main-right {
 }
 
+.header-user {
+  color: black !important;
+}
+
 .width-100 {
   width: 100%;
 }
 
+.text-secondary {
+  color: #454545;
+}
+
 .fa-icon {
-  color: black;
+  color: #454545;
+  border: 1px solid grey;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.margin-padding-left-none {
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .navbar-main-items {

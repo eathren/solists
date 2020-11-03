@@ -51,8 +51,8 @@
 
       <nav class="navbar   navbar-dark bg-dark navbar-background navbar-expand-lg  navbar-light bg-light">
         <div class="container">
-
-          <a class="navbar-brand" href="{% url 'home' %}">Solists</a>
+          {% url 'home' as url %}
+          <a class="navbar-brand" href="{{ url }}">Solists</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,14 +61,17 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
-              <li class="nav-item active ">
-                <a class="nav-link" href="{% url 'home' %}">Find Jobs <span class="sr-only">(current)</span></a>
+              {% url 'home' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %} ">
+                <a class="nav-link" href="{{ url }}">Find Jobs <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'developers' %}">Find Developers</a>
+              {% url 'developers' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Find Developers</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'post_lead' %}">Post a Job</a>
+              {% url 'post_lead' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Post a Job</a>
               </li>
             </ul>
             <ul class="navbar-nav my-2 my-lg-0 justify-content-end">
@@ -76,28 +79,34 @@
                 <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
               </form>
               {% if user.is_authenticated %}
-              <li class="nav-item active">
-                <a class=" nav-link icon-hover-fix" href="{% url 'profile' %}">
+              {% url 'profile' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class=" nav-link icon-hover-fix" href="{{ url }}">
                   {% comment %} <i class="fas fa-user-circle"></i> {% endcomment %}
                   Account
                 </a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'support' %}">Support</a>
+              {% url 'support' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Support</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+              {% url 'account_logout' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Logout</a>
               </li>
 
               {% else  %}
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'support' %}">Support</a>
+              {% url 'support' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Support</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
+              {% url 'account_login' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Log In</a>
               </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+              {% url 'account_signup' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Sign Up</a>
               </li>
 
               {% endif %}

@@ -13,22 +13,21 @@ Solists | Developers
 
     <!--  was {{developer.get_absolute_url}} -->
 
-    <h2> <a href="{{developer.get_absolute_url}}" class="normalize">
+    <h2> <a href="{{developer.get_absolute_url}}" class="normalize header-user">
             {{developer.first_name}} {{developer.last_name}}</a></h2>
     <p>
-        <b>Current Location:</b> {{developer.country.name}}
+        {{developer.country.name}}
     </p>
     {% if developer.skills %}
     <p>
-        <b>Skills:</b> {{developer.skills}}
+        {{developer.skills}}
     </p>
     {% endif %}
     {% if developer.experience %}
     <p>
-        <b>Experience:</b> {{developer.experience}}
+        {{developer.experience}}
     </p>
     {% endif %}
-    <hr>
     <p class="p-subtext">
         <b>Joined:</b> {{developer.date_joined| date:"M. d,   Y"}}
     </p>
