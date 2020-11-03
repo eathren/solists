@@ -24,8 +24,9 @@ Solists | Profile | {{developer.first_name}} {{developer.last_name}}
                 {% endif %}
                 <div class="text-secondary">
                         {% if developer.linkedin %}
-                        <a class="btn margin-padding-left-none   " target="_blank" href="{{developer.linkedin}}"><i
-                                        class="fa  fa-icon fa-2x fa-linkedin-square" aria-hidden=" true"></i>
+                        <a class="btn margin-padding-left-none btn-floating   " target="_blank"
+                                href="{{developer.linkedin}}"><i class="fa  fa-icon fa-2x fa-linkedin-square"
+                                        aria-hidden=" true"></i>
                         </a>
                         {% endif %}
                         {% if developer.github %}
@@ -46,12 +47,15 @@ Solists | Profile | {{developer.first_name}} {{developer.last_name}}
                 </div>
                 <hr>
 
-                <p> <b>Current Location:</b> {{developer.country.name}}</p>
+                <p> <b>Current Location:</b> <br> {{developer.country.name}}</p>
 
                 {% if developer.description %}
-                <p> <b> Summary: </b> {{developer.description}}</p>
+                <p> <b> Summary: </b> <br> {{developer.description}}</p>
                 {% endif %}
-                <p> <b> Skills: </b>{{developer.skills}} </p>
+
+                <p> <b> Skills: </b> <br>{{developer.skills}} </p>
+                <p> <b> Experience Level: </b> <br>{{developer.experience}} </p>
+                <b>Joined:</b> <br> {{developer.date_joined| date:"M. d,   Y"}}
                 {% if developer.allow_contact and developer.contact_email %}
                 <hr>
                 <a class="card-button card-button-small " href="mailto:{{developer.contact_email}}"> Contact

@@ -143,6 +143,10 @@ button.stripe-button-el > span {
   .container-custom {
     margin: 5px;
   }
+
+  .card-user {
+    padding: 15px !important;
+  }
 }
 
 .navbar-flex {

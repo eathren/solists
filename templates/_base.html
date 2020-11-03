@@ -69,15 +69,17 @@
               <li class="nav-item {% if request.path == url %}active{% endif %}">
                 <a class="nav-link" href="{{ url }}">Find Developers</a>
               </li>
+              {% url 'designers' as url %}
+              <li class="nav-item {% if request.path == url %}active{% endif %}">
+                <a class="nav-link" href="{{ url }}">Find Designers</a>
+              </li>
               {% url 'post_lead' as url %}
               <li class="nav-item {% if request.path == url %}active{% endif %}">
                 <a class="nav-link" href="{{ url }}">Post a Job</a>
               </li>
             </ul>
             <ul class="navbar-nav my-2 my-lg-0 justify-content-end">
-              <form class="form-inline mt-2 mt-md-0" action="{% url 'search_results' %}" method="get">
-                <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              </form>
+
               {% if user.is_authenticated %}
               {% url 'profile' as url %}
               <li class="nav-item {% if request.path == url %}active{% endif %}">

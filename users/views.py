@@ -29,7 +29,7 @@ class ProfilePageView(generic.UpdateView):
 
 class DeveloperListView(ListView):
     model = CustomUser
-    queryset = CustomUser.objects.filter(published=1).order_by('-date_joined')
+    queryset = CustomUser.objects.filter(published=1, developer=1).order_by('-date_joined')
     context_object_name = "developer_list"
     template_name = "developers/developer_list.html"
     paginate_by = 40
@@ -39,3 +39,15 @@ class DeveloperDetailView(DetailView):
     model = CustomUser
     context_object_name = "developer"
     template_name = 'developers/profile.html'
+
+class DesignerListView(ListView):
+    model=CustomUser
+    queryset = CustomUser.objects.filter(published=1, designer=1).order_by('-date_joined')
+    context_object_name = "designer_list"
+    template_name = "designers/designer_list.html"
+    paginate_by = 40
+
+class DesignerDetailView(DetailView):
+    model = CustomUser
+    context_object_name = "designer"
+    template_name = 'designers/profile.html'

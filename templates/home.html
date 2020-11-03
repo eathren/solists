@@ -6,12 +6,28 @@
 {% block content %}
 
 
+<div class="container">
 
 
-<p class="p-header">
-  Solists is a remote work job board for <b> software developers </b> and <b> designers</b>.
-</p>
+
+  <p class="p-header">
+    Solists is a remote work job board for <b> software developers </b> and <b> designers</b>.
+  </p>
+  <form class="form-inline w-100" action="{% url 'search_results' %}" method="get">
+
+    <div class="input-group w-100 ">
+      <input name="q" class="form-control " type="text"
+        placeholder="Search for jobs, skills, companies, developers, & designers..." aria-label="Search">
+
+
+    </div>
+</div>
+</form>
 <hr>
+<br>
+
+
+
 
 {% for lead in lead_list %}
 <form class="" action="{% url 'search_results' %}" method="get">
@@ -111,6 +127,8 @@
   {% endif %}
 </ul>
 {% endif %}
+</div>
+
 
 {% endblock content %}
 
