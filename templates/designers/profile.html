@@ -5,9 +5,8 @@ Solists | Profile | {{designer.first_name}} {{designer.last_name}}
 
 
 {% block content%}
-<div class="container">
 
-    <div class="card-user">
+<div class="card-user">
 
         <h2>{{designer.first_name}} {{designer.last_name}}</h2>
         {% if designer.job_title %}
@@ -23,26 +22,26 @@ Solists | Profile | {{designer.first_name}} {{designer.last_name}}
         {% endif %}
         {% endif %}
         <div class="text-secondary">
-            {% if designer.linkedin %}
-            <a class="btn margin-padding-left-none btn-floating   " target="_blank" href="{{designer.linkedin}}"><i
-                    class="fa  fa-icon fa-2x fa-linkedin-square" aria-hidden=" true"></i>
-            </a>
-            {% endif %}
-            {% if designer.github %}
-            <a class="btn margin-padding-left-none " target="_blank" href="{{designer.github}}"><i
-                    class="fa  fa-icon fa-2x fa-github-square" aria-hidden=" true"></i>
-            </a>
-            {% endif %}
-            {%  if designer.website %}
+                {% if designer.linkedin %}
+                <a class="margin-padding-left-none btn-floating   " target="_blank" href="{{designer.linkedin}}"><i
+                                class="fa  fa-icon fa-2x fa-linkedin-square" aria-hidden=" true"></i>
+                </a>
+                {% endif %}
+                {% if designer.github %}
+                <a class="margin-padding-left-none " target="_blank" href="{{designer.github}}"><i
+                                class="fa  fa-icon fa-2x fa-github-square" aria-hidden=" true"></i>
+                </a>
+                {% endif %}
+                {%  if designer.website %}
 
-            <a class="btn margin-padding-left-none " target="_blank" href="{{designer.website}}"><i
-                    class="fa  fa-icon fa-2x fa-globe" aria-hidden=" true"></i>
-            </a>
-            {% endif %}
-            {% if designer.stackoverflow %}
-            <a class="btn margin-padding-left-none " target="_blank" href="{{designer.stackoverflow}}"><i
-                    class="fa  fa-icon fa-2x fa-stack-overflow" aria-hidden=" true"></i></a>
-            {% endif %}
+                <a class="margin-padding-left-none " target="_blank" href="{{designer.website}}"><i
+                                class="fa  fa-icon fa-2x fa-globe" aria-hidden=" true"></i>
+                </a>
+                {% endif %}
+                {% if designer.stackoverflow %}
+                <a class="margin-padding-left-none " target="_blank" href="{{designer.stackoverflow}}"><i
+                                class="fa  fa-icon fa-2x fa-stack-overflow" aria-hidden=" true"></i></a>
+                {% endif %}
         </div>
         <hr>
 
@@ -61,7 +60,6 @@ Solists | Profile | {{designer.first_name}} {{designer.last_name}}
         </a>
 
         {% endif %}
-    </div>
 </div>
 
 

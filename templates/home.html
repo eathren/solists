@@ -5,130 +5,151 @@
 
 {% block content %}
 
+<div class="text-center container-fluid  ">
 
-<div class="container">
-
-
-
-  <p class="p-header">
-    Solists is a remote work job board for <b> software developers </b> and <b> designers</b>.
-  </p>
-  <form class="form-inline w-100" action="{% url 'search_results' %}" method="get">
-
-    <div class="input-group w-100 ">
-      <input name="q" class="form-control " type="text"
-        placeholder="Search for jobs, skills, companies, developers, & designers..." aria-label="Search">
+  <div class="banner row justify-content-center bg-secondary " id=" picture-background">
+    <div class="col-xl-7">
+      <div class="container-fluid text-center">
 
 
-    </div>
-</div>
-</form>
-<hr>
-<br>
+        <div class=" justify-content-md-center align-items-center">
+          <h2 class="display-2 pt-5 text-center ">
+            Solists
+          </h2>
+        </div>
+        <div class="row justify-content-md-center align-items-center">
+
+          <h3 class=" display-6 pt-2">
+            A remote job board for software developers and designers.
+          </h3>
+        </div>
+
+        <h5 class="pt-5">
+          Find your next job among our <span class="badge badge-light">{{ lead_list.count }} </span> posted positions
+        </h5>
+        <div class="row justify-content-center pt-3 pb-5">
+          <div class="col">
 
 
+            <form class="form-inline w-75 search-main" action="{% url 'search_results' %}" method="get">
 
+              <div class="input-group w-100 ">
+                <input name="q" class="form-control  " type="text" placeholder="Search" aria-label="Search">
 
-{% for lead in lead_list %}
-<form class="" action="{% url 'search_results' %}" method="get">
-  <div class="listing">
-    <div class="listing-body">
-      <div class="listing-background-primary">
-        <div class="listing-header">
-          <div class="row w-100">
-            <div class="col-12 col-lg-6">
+              </div>
 
-
-              <p class="p-header-listing">
-                <!-- {{lead.logo}} -->
-
-                <a class="p-header-link" href="{{lead.get_absolute_url}}">
-                  {{lead.title}}
-                </a>
-
-              </p>
-            </div>
-            <div class="col-12 col-lg-6">
-
-              <p class="p-header-listing-date float-lg-right">
-                {{lead.created_at | timesince }} ago
-              </p>
-            </div>
           </div>
         </div>
-        <div>
-          <div class="p-header-listing-secondary">
-            <input type="submit" name="q" class=" listing-button listing-tertiary-button btn " value="{{lead.company}}">
-            <span>
-              -
-            </span> <input type="submit" name="q" class=" listing-button listing-tertiary-button btn "
-              value="{{lead.country}}">
-          </div>
-          <span class="listing-skill">
-            {% for job in lead.job_type %}
-            <input type="submit" name="q" class=" listing-button  listing-primary-button  btn " value="{{job}}">
-            {% endfor %}
-            <!-- {% if lead.salary_range %}
-            {{lead.salary_range}}
-            {% endif %} -->
-          </span>
-        </div>
-      </div>
-
-      <div class="listing-background-secondary">
-        <!-- <p class="p-color-emphasis"> -->
-        <div class="listing-job-type">
-          <!-- {{lead.skills}} -->
-
-          {% for skill in lead.skills %}
-          <input type="submit" name="q" class=" listing-button listing-secondary-button btn " value="{{skill}}">
-          {% endfor %}
-
-
-        </div>
-        <div class="listing-button-group">
-          {% if lead.application_link %}
-          <a class="listing-button-left btn" href="{{ lead.application_link }}">APPLY NOW</a>
-          {% else %}
-          <a class="listing-button-left btn" href="{{ lead.contact_info }}">CONTACT US</a>
-          {% endif %}
-          <a class="listing-button-right btn" href="{{ lead.get_absolute_url }}">MORE INFO</a>
-        </div>
-        <!-- </p> -->
-
+        </form>
       </div>
     </div>
   </div>
-</form>
-
-{% endfor %}
-{% if is_paginated %}
-<ul class="pagination justify-content-center">
-  {% if page_obj.has_previous %}
-  <li class="page-item ">
-    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
-  </li>
-  {% else %}
-  <li class="page-item" class="disabled"><span class="page-link">Previous</span></li>
-  {% endif %}
-  {% for i in paginator.page_range %}
-  {% if page_obj.number == i %}
-  <li class="page-item  "><span class="page-link active-primary-1">{{ i }} <span
-        class="sr-only page-link">(current)</span></span>
-  </li>
-  {% else %}
-  <li class="page-item"><a class="page-link " href="?page={{ i }}">{{ i }}</a></li>
-  {% endif %}
-  {% endfor %}
-  {% if page_obj.has_next %}
-  <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-  {% else %}
-  <li class="page-item" class="disabled"><a href="#" class=" page-link">Next</a></li>
-  {% endif %}
-</ul>
-{% endif %}
 </div>
 
+<div class="container">
+  <br>
+  {% for lead in lead_list %}
+  <form class="" action="{% url 'search_results' %}" method="get">
+    <div class="listing">
+      <div class="listing-body">
+        <div class="listing-background-primary">
+          <div class="listing-header">
+            <div class="row w-100">
+              <div class="col-12 col-lg-6">
+
+
+                <p class="p-header-listing">
+                  <!-- {{lead.logo}} -->
+
+                  <a class="p-header-link" href="{{lead.get_absolute_url}}">
+                    {{lead.title}}
+                  </a>
+
+                </p>
+              </div>
+              <div class="col-12 col-lg-6">
+
+                <p class="p-header-listing-date float-lg-right">
+                  {{lead.created_at | timesince }} ago
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="p-header-listing-secondary">
+              <input type="submit" name="q" class=" listing-button listing-tertiary-button btn "
+                value="{{lead.company}}">
+              <span>
+                -
+              </span> <input type="submit" name="q" class=" listing-button listing-tertiary-button btn "
+                value="{{lead.country}}">
+            </div>
+            <span class="listing-skill">
+              {% for job in lead.job_type %}
+              <input type="submit" name="q" class=" listing-button  listing-primary-button  btn " value="{{job}}">
+              {% endfor %}
+              <!-- {% if lead.salary_range %}
+            {{lead.salary_range}}
+            {% endif %} -->
+            </span>
+          </div>
+        </div>
+
+        <div class="listing-background-secondary">
+          <!-- <p class="p-color-emphasis"> -->
+          <div class="listing-job-type">
+            <!-- {{lead.skills}} -->
+
+            {% for skill in lead.skills %}
+            <input type="submit" name="q" class=" listing-button listing-secondary-button btn " value="{{skill}}">
+            {% endfor %}
+
+
+          </div>
+          <div class="listing-button-group">
+            {% if lead.application_link %}
+            <a class="listing-button-left btn" href="{{ lead.application_link }}">APPLY NOW</a>
+            {% else %}
+            <a class="listing-button-left btn" href="{{ lead.contact_info }}">CONTACT US</a>
+            {% endif %}
+            <a class="listing-button-right btn" href="{{ lead.get_absolute_url }}">MORE INFO</a>
+          </div>
+          <!-- </p> -->
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+  {% endfor %}
+  {% if is_paginated %}
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li class="page-item ">
+      <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+    </li>
+    {% else %}
+    <li class="page-item" class="disabled"><span class="page-link">Previous</span></li>
+    {% endif %}
+    {% for i in paginator.page_range %}
+    {% if page_obj.number == i %}
+    <li class="page-item  "><span class="page-link active-primary-1">{{ i }} <span
+          class="sr-only page-link">(current)</span></span>
+    </li>
+    {% else %}
+    <li class="page-item"><a class="page-link " href="?page={{ i }}">{{ i }}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+    {% else %}
+    <li class="page-item" class="disabled"><a href="#" class=" page-link">Next</a></li>
+    {% endif %}
+  </ul>
+  {% endif %}
+</div>
+
+</div>
 
 {% endblock content %}
 

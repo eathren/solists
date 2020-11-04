@@ -16,6 +16,7 @@ class LeadListView(ListView):
     template_name = 'home.html'
     paginate_by = 20
     ordering=['-created_at']
+    count = Lead.objects.filter(status=1).count()
 
 
 

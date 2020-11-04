@@ -3,10 +3,7 @@ body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   /* font-size: 1.25rem; */
   overflow-x: hidden;
-}
-
-body {
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 p {
@@ -48,23 +45,9 @@ a {
   --container-width: 960px;
 }
 
-.banner {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-
-  color: white !important;
-  background-image: url("/static/img/pexels-photo-3560044.jpeg");
-  background-position: center;
-  background-size: cover;
-  width: 100vw;
-  height: 50vh;
-  display: flex;
-  background-blend-mode: soft-light;
-  background-color: #4e5d6c !important;
-}
-
-.container {
-  padding-top: 30px;
-}
+/* .container {
+  min-height: 100%;
+} */
 
 .container-custom {
   height: 100%;
@@ -488,10 +471,9 @@ button.stripe-button-el > span {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-
   overflow: hidden;
   margin-bottom: 10px;
-  border: 1px solid rgb(177, 177, 177);
+  border: 1px solid #e2e2e2;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

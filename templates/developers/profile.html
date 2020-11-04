@@ -5,64 +5,61 @@ Solists | Profile | {{developer.first_name}} {{developer.last_name}}
 
 
 {% block content%}
-<div class="container">
 
-        <div class="card-user">
+<div class="card-user">
 
-                <h2>{{developer.first_name}} {{developer.last_name}}</h2>
-                {% if developer.job_title %}
-                <h4> {{developer.job_title}}</h4>
-                {% else %}
-                {% if developer.developer %}
-                <h4> Developer </h4>
-                {% else %}
-                {% endif %}
-                {% if developer.designer %}
-                <h4> Designer </h4>
-                {% else %}
-                {% endif %}
-                {% endif %}
-                <div class="text-secondary">
-                        {% if developer.linkedin %}
-                        <a class="btn margin-padding-left-none btn-floating   " target="_blank"
-                                href="{{developer.linkedin}}"><i class="fa  fa-icon fa-2x fa-linkedin-square"
-                                        aria-hidden=" true"></i>
-                        </a>
-                        {% endif %}
-                        {% if developer.github %}
-                        <a class="btn margin-padding-left-none " target="_blank" href="{{developer.github}}"><i
-                                        class="fa  fa-icon fa-2x fa-github-square" aria-hidden=" true"></i>
-                        </a>
-                        {% endif %}
-                        {%  if developer.website %}
-
-                        <a class="btn margin-padding-left-none " target="_blank" href="{{developer.website}}"><i
-                                        class="fa  fa-icon fa-2x fa-globe" aria-hidden=" true"></i>
-                        </a>
-                        {% endif %}
-                        {% if developer.stackoverflow %}
-                        <a class="btn margin-padding-left-none " target="_blank" href="{{developer.stackoverflow}}"><i
-                                        class="fa  fa-icon fa-2x fa-stack-overflow" aria-hidden=" true"></i></a>
-                        {% endif %}
-                </div>
-                <hr>
-
-                <p> <b>Current Location:</b> <br> {{developer.country.name}}</p>
-
-                {% if developer.description %}
-                <p> <b> Summary: </b> <br> {{developer.description}}</p>
-                {% endif %}
-
-                <p> <b> Skills: </b> <br>{{developer.skills}} </p>
-                <p> <b> Experience Level: </b> <br>{{developer.experience}} </p>
-                <b>Joined:</b> <br> {{developer.date_joined| date:"M. d,   Y"}}
-                {% if developer.allow_contact and developer.contact_email %}
-                <hr>
-                <a class="card-button card-button-small " href="mailto:{{developer.contact_email}}"> Contact
+        <h2>{{developer.first_name}} {{developer.last_name}}</h2>
+        {% if developer.job_title %}
+        <h4> {{developer.job_title}}</h4>
+        {% else %}
+        {% if developer.developer %}
+        <h4> Developer </h4>
+        {% else %}
+        {% endif %}
+        {% if developer.designer %}
+        <h4> Designer </h4>
+        {% else %}
+        {% endif %}
+        {% endif %}
+        <div class="text-secondary">
+                {% if developer.linkedin %}
+                <a class="margin-padding-left-none btn-floating   " target="_blank" href="{{developer.linkedin}}"><i
+                                class="fa  fa-icon fa-2x fa-linkedin-square" aria-hidden=" true"></i>
                 </a>
+                {% endif %}
+                {% if developer.github %}
+                <a class="margin-padding-left-none " target="_blank" href="{{developer.github}}"><i
+                                class="fa  fa-icon fa-2x fa-github-square" aria-hidden=" true"></i>
+                </a>
+                {% endif %}
+                {%  if developer.website %}
 
+                <a class="margin-padding-left-none " target="_blank" href="{{developer.website}}"><i
+                                class="fa  fa-icon fa-2x fa-globe" aria-hidden=" true"></i>
+                </a>
+                {% endif %}
+                {% if developer.stackoverflow %}
+                <a class="margin-padding-left-none " target="_blank" href="{{developer.stackoverflow}}"><i
+                                class="fa  fa-icon fa-2x fa-stack-overflow" aria-hidden=" true"></i></a>
                 {% endif %}
         </div>
+        <hr>
+
+        <p> <b>Current Location:</b> <br> {{developer.country.name}}</p>
+
+        {% if developer.description %}
+        <p> <b> Summary: </b> <br> {{developer.description}}</p>
+        {% endif %}
+
+        <p> <b> Skills: </b> <br>{{developer.skills}} </p>
+        <p> <b> Experience Level: </b> <br>{{developer.experience}} </p>
+        <b>Joined:</b> <br> {{developer.date_joined| date:"M. d,   Y"}}
+        {% if developer.allow_contact and developer.contact_email %}
+        <hr>
+        <a class="card-button card-button-small " href="mailto:{{developer.contact_email}}"> Contact
+        </a>
+
+        {% endif %}
 </div>
 
 
