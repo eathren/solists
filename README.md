@@ -12,7 +12,7 @@ Let's be real. Most of us hate the job hunt process (I certainly do). Some of th
 
 Right now the 1.0 MVP is written in  Django and postres, having transitioned from a React + DRF codebase I previously had been working on. 
 
-![solists screenshot](https://i.imgur.com/IUCJ74T.png )
+![solists screenshot](https://i.imgur.com/M1AdSYu.png)
 
 ### Features currently live:
 
