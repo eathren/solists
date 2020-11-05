@@ -59,9 +59,10 @@
                 <div class="row align-items-center">
 
                   <div class="col-md-6 ">
-                    <input type="submit" name="q" class=" d-none d-lg-block listing-button listing-tertiary-button btn "
+                    {% if lead.company %}
+                    <input type="submit" name="q" class="listing-button listing-tertiary-button btn "
                       value="{{lead.company}}">
-
+                    {% endif %}
                     <div class="">
 
                       <a class="p-header-link" href="{{lead.get_absolute_url}}">
@@ -69,10 +70,11 @@
                       </a>
                     </div>
                     <div>
-
+                      {% if lead.company %}
                       <input type="submit" name="q"
                         class="  d-lg-none d-md-block listing-button listing-tertiary-button btn "
                         value="{{lead.company}}">
+                      {% endif %}
                       <span class="p-header-listing-secondary d-lg-none ">
                         -
                       </span> <input type="submit" name="q" class=" listing-button listing-tertiary-button btn "
@@ -89,9 +91,9 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-3 col-md-3 col-3">
+              <div class="col-sm-2 col-md-3 col-3">
                 <div class="row align-items-center">
-                  <div class="col">
+                  <div class="col-6">
                     <p class="p-header-listing-date ">
                       {{lead.created_at | timesince }}
                     </p>

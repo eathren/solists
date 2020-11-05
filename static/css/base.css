@@ -370,6 +370,11 @@ button.stripe-button-el > span {
   -webkit-transition: all 0.2s ease;
 }
 
+.listing-button-apply:hover {
+  background-color: #ddebf1;
+  border: 1px solid #2a6b8b;
+}
+
 .listing-button-left {
   border-radius: 8px 0px 0px 8px;
   border: 1px solid#3789b3;
