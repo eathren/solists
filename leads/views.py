@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import LeadCreationForm
 from django.core.paginator import Paginator
+
 # Create your views here.
 from .models import Lead
 

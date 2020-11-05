@@ -1,6 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
-
+{% load custom_tags %}
 {% block title %}Solists | Work Remotely {% endblock title %}
 
 {% block content %}
@@ -95,7 +95,7 @@
                 <div class="row align-items-center">
                   <div class="col-6">
                     <p class="p-header-listing-date ">
-                      {{lead.created_at | timesince }}
+                      {{lead.created_at|timesince|upto:',' }}
                     </p>
                   </div>
 
