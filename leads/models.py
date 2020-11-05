@@ -181,7 +181,7 @@ class Lead(models.Model):
 
     )
     skills = MultiSelectField(
-        choices=LEAD_SKILLS, max_choices=45, max_length=1000, blank=True)
+        choices=LEAD_SKILLS, max_choices=6, max_length=1000, blank=True)
 
     class Meta:
         indexes = [

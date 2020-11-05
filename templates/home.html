@@ -59,8 +59,7 @@
                 <div class="row align-items-center">
 
                   <div class="col-md-6 ">
-                    <input type="submit" name="q"
-                      class="  d-none 	d-sm-none d-md-block	d-sm-none d-md-block listing-button listing-tertiary-button btn "
+                    <input type="submit" name="q" class=" d-none d-lg-block listing-button listing-tertiary-button btn "
                       value="{{lead.company}}">
 
                     <div class="">
@@ -85,7 +84,7 @@
                   </div>
                   <div class="col-md-6 col-sm-12">
                     {% for skill in lead.skills %}
-                    <input type="submit" name="q" class=" btn btn-outline-dark  " value="{{skill}}">
+                    <input type="submit" name="q" class=" btn btn-outline-dark  listing-skill" value="{{skill}}">
                     {% endfor %}
                   </div>
                 </div>
