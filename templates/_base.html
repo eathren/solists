@@ -48,7 +48,6 @@
 
   <body class="d-flex flex-column min-vh-100">
     <div>
-
       <header>
         <nav
           class="navbar navbar-dark bg-dark navbar-background navbar-expand-lg  navbar-light bg-light {% if request.path != '/' %}margin-bottom-extra {% endif %}">
@@ -135,6 +134,7 @@
     </header>
     <!--  If url isn't home, set a container wrapper.  -->
     <div class="{% if request.path != '/' %}container {% endif %}">
+
       {% block content %}
       {% endblock content %}
     </div>
