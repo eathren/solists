@@ -44,7 +44,7 @@ class CustomUser(AbstractUser):
         choices=EXPERIENCE_LEVEL, max_choices=4, max_length=200, blank=True)
 
     LEAD_SKILLS = (
-         ('Agile', 'Agile'),
+          ('Agile', 'Agile'),
         ('Amazon Web Services', 'Amazon Web Services'),
         ('AngularJS', 'AngularJS'),
         ('Ansible', 'Ansible'),
@@ -68,6 +68,7 @@ class CustomUser(AbstractUser):
         ('Docker', 'Docker'),
         ('Elasticsearch', 'Elasticsearch'),
         ('Ember.js', 'Ember.js'),
+        ('Express', 'Express'),
         ('Fabric', 'Fabric'),
         ('Flask', 'Flask'),
         ('Frontend', 'Frontend'),
@@ -99,6 +100,7 @@ class CustomUser(AbstractUser):
         ('Natural Language Processing', 'Natural Language Processing'),
         ('.NET', '.NET'),
         ('Nginx', 'Nginx'),
+        ('Node', 'Node'),
         ('NumPy', 'NumPy'),
         ('Pandas', 'Pandas'),
         ('PostegreSQL', 'PostegreSQL'),
