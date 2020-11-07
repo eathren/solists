@@ -59,32 +59,34 @@
                   <div class="col-md-6 ">
                     {% if lead.company %}
                     <input type="submit" name="q" class=" d-none d-lg-block listing-button listing-tertiary-button btn "
-                      onClick="noPreopagation" value="{{lead.company}}">
+                      onclick="event.stopPropagation()" value="{{lead.company}}">
                     {% endif %}
                     <div class="">
 
-                      <a class="p-header-link" href="{{lead.get_absolute_url}}">
+                      <a class="p-header-link" href="{{lead.get_absolute_url}}" onclick="event.stopPropagation()">
                         {{lead.title}}
                       </a>
                     </div>
                     <div>
                       {% if lead.company %}
-                      <input type="submit" name="q"
+                      <input type="submit" name="q" onclick="event.stopPropagation()"
                         class="  d-lg-none d-md-block listing-button listing-tertiary-button btn "
                         value="{{lead.company}}">
                       {% endif %}
                       <span class="p-header-listing-secondary d-lg-none ">
                         -
                       </span> <input type="submit" name="q" class=" listing-button listing-tertiary-button btn "
-                        value="{{lead.country}}"> {% if lead.country %} - {% endif %} {% for job in lead.job_type %}
+                        onclick="event.stopPropagation()" value="{{lead.country}}"> {% if lead.country %} - {% endif %}
+                      {% for job in lead.job_type %}
                       <input type="submit" name="q" class=" listing-button  listing-primary-button  btn "
-                        value="{{job}}">
+                        onclick="event.stopPropagation()" value="{{job}}">
                       {% endfor %}
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-12">
                     {% for skill in lead.skills %}
-                    <input type="submit" name="q" class=" btn btn-outline-dark  listing-skill" value="{{skill}}">
+                    <input type="submit" name="q" class=" btn btn-outline-dark  listing-skill"
+                      onclick="event.stopPropagation()" value="{{skill}}">
                     {% endfor %}
                   </div>
                 </div>
@@ -99,9 +101,11 @@
                       </p>
                       <div class="d-none d-sm-block">
                         {% if lead.application_link %}
-                        <a class="btn listing-button-apply text-center  " href="{{ lead.application_link }}">APPLY </a>
+                        <a class="btn listing-button-apply text-center  " onclick="event.stopPropagation()"
+                          href="{{ lead.application_link }}">APPLY </a>
                         {% else %}
-                        <a class="btn listing-button-apply text-center  " href="{{ lead.contact_info }}">CONTACT US</a>
+                        <a class="btn listing-button-apply text-center  " onclick="event.stopPropagation()"
+                          href="{{ lead.contact_info }}">CONTACT US</a>
                         {% endif %}
                         <!-- <a class="listing-button-right btn" href="{{ lead.get_absolute_url }}">MORE INFO</a> -->
                       </div>
