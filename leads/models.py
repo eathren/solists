@@ -81,7 +81,7 @@ class Lead(models.Model):
         choices=REMOTE_TYPE, max_choices=3, max_length=200, blank=True)
 
     LEAD_SKILLS = (
-        ('Agile', 'Agile'),
+         ('Agile', 'Agile'),
         ('Amazon Web Services', 'Amazon Web Services'),
         ('AngularJS', 'AngularJS'),
         ('Ansible', 'Ansible'),
@@ -89,7 +89,7 @@ class Lead(models.Model):
         ('Apache', 'Apache'),
         ('Artificial Intelligence', 'Artificial Intelligence'),
         ('Backbone.js', 'Backbone.js'),
-        ('Backend ', 'Backend '),
+        ('Backend', 'Backend'),
         ('Big Data', 'Big Data'),
         ('Blockchain', 'Blockchain'),
         ('Objective-C', 'Objective-C'),
@@ -107,8 +107,8 @@ class Lead(models.Model):
         ('Ember.js', 'Ember.js'),
         ('Fabric', 'Fabric'),
         ('Flask', 'Flask'),
-        ('Frontend ', 'Frontend '),
-        ('Fullstack ', 'Fullstack '),
+        ('Frontend', 'Frontend'),
+        ('Fullstack', 'Fullstack'),
         ('Gatsby.js', 'Gatsby.js'),
         ('Git', 'Git'),
         ('Golang', 'Golang'),
