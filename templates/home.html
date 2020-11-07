@@ -78,9 +78,9 @@
                     {% endif %}
                     <span class="p-header-listing-secondary d-lg-none ">
                       -
-                    </span> <input type="submit" name="q"
+                    </span>{% if lead.country %} <input type="submit" name="q"
                       class="bg-transparent listing-button listing-tertiary-button btn "
-                      onclick="event.stopPropagation()" value="{{lead.country}}"> {% if lead.country %} -
+                      onclick="event.stopPropagation()" value="{{lead.country}}"> -
                     {% endif %}
                     {% for job in lead.job_type %}
                     <input type="submit" name="q"
