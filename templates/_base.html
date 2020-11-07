@@ -40,7 +40,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
-
       gtag('config', 'UA-181661650-1');
     </script>
     {% endif %}
@@ -142,10 +141,10 @@
     <!-- jQuery and JS bundle w/ Popper.js -->
 
     </div>
-
+    <script src="{% static 'js/base.js'%}"></script>
 
     <script src="{% static 'js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+    <!-- <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"></script>
