@@ -12,7 +12,7 @@ class CustomUser(AbstractUser):
         primary_key=True,
         default=uuid.uuid4,
         editable=False)
-    published = models.BooleanField(default=False, help_text="Your profile will only show up in the developer list if this is checked.")
+    published = models.BooleanField(default=False, help_text="Your profile will only show up in the developer or designer list if this is checked.")
     developer = models.BooleanField(default=False)
     designer = models.BooleanField(default=False)
     description = models.TextField(blank=True)
@@ -22,7 +22,7 @@ class CustomUser(AbstractUser):
     github = models.CharField(max_length = 200, blank=True, )
     website = models.CharField(max_length = 200, blank=True, )
     contact_email =  models.CharField(max_length = 200, blank=True, )
-    allow_contact = models.BooleanField(default=False)
+    allow_contact = models.BooleanField(default=False, help_text="If this is not selected, your email will be kept private. Your email is private by default")
     stackoverflow = models.CharField(max_length = 200, blank=True, )
     EMPLOYMENT_TYPE = (
         ('Full-time', 'Full-time'),
