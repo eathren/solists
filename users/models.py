@@ -22,7 +22,7 @@ class CustomUser(AbstractUser):
     github = models.CharField(max_length = 200, blank=True, )
     website = models.CharField(max_length = 200, blank=True, )
     contact_email =  models.CharField(max_length = 200, blank=True, )
-    allow_contact = models.BooleanField(default=False, help_text="If this is not selected, your email will be kept private. Your email is private by default")
+    allow_contact = models.BooleanField(default=False, help_text="If this is selected, your email will be available and displayed.")
     stackoverflow = models.CharField(max_length = 200, blank=True, )
     EMPLOYMENT_TYPE = (
         ('Full-time', 'Full-time'),

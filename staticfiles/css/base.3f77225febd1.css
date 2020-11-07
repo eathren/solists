@@ -58,7 +58,7 @@ a {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   text-align: center !important;
   color: white !important;
-  background-image: url("/static/img/pexels-photo-5629220.jpeg");
+  background-image: url("/static/img/pexels-photo-5629220.5ca483fd01c8.jpeg");
   background-position: center;
   background-size: cover;
   width: 100vw;
@@ -527,7 +527,7 @@ button.stripe-button-el > span {
 }
 
 .listing-body:active .listing-background-primary:active {
-  background-color: rgb(241, 241, 241);
+  background-color: rgb(236, 236, 236);
 }
 
 .listing .listing-body {
@@ -542,6 +542,8 @@ button.stripe-button-el > span {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .listing .listing-body:hover {
+  background-color: grey;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 .listing .listing-background-primary {
   background-color: white;
@@ -550,7 +552,6 @@ button.stripe-button-el > span {
   min-height: 40px;
   padding: 20px 20px 15px 20px;
 }
-
 /* .listing-background-primary:hover {
   background-color: rgb(218, 218, 218);
 }
@@ -633,18 +634,5 @@ button.stripe-button-el > span {
 }
 
 .underline-hover:hover {
-  /* text-decoration: underline; */
-}
-
-.listing-primary-button:hover {
-  background-color: #ddebf1 !important;
-}
-
-.listing-tertiary-button:hover {
-  background-color: rgb(228, 228, 228) !important;
-}
-
-.card-border-fix {
-  border: 1px solid rgb(209, 209, 209);
-  border-radius: 0 !important;
+  text-decoration: underline;
 }
