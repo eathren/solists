@@ -7,32 +7,53 @@ Solists | Designers
 {% block content %}
 <h2 class="center"> Find Designers</h2>
 <hr>
-{% for designer in designer_list %}
-{% if designer.published %}
-<div class="card">
 
-    <!--  was {{designer.get_absolute_url}} -->
+<div class="">
+    {% for dev in dev_list %}
+    <div class="list-group-item list-group-item-action">
+        <div class="list-users">
 
-    <h2> <a href="{{designer.get_absolute_url}}" class="normalize header-user">
-            {{designer.first_name}} {{designer.last_name}}</a></h2>
+            <!--  was {{dev.get_absolute_url}} -->
+            <div class="row">
 
-    <p> <b>Current Location:</b> <br> {{designer.country.name}}</p>
+                <h3> <a href="{{dev.get_absolute_url}}" class="normalize header-user">
+                        {{dev.first_name}} {{dev.last_name}}</a>
+
+                </h3>
+
+            </div>
+
+            {% if dev.job_title %}
+            <div class="row">
+
+                <h6>{{dev.job_title}}</h6>
+            </div>
+            {% endif %}
+            <div class="row">
+
+                {% for skill in dev.skills %}
+                <input type="submit" name="q" class=" btn btn-outline-dark  listing-skill"
+                    onclick="event.stopPropagation()" value="{{skill}}">
+                {% endfor %}
+            </div>
+            <div class="row">
+                <span>
+                    Joined: {{dev.date_joined| date:"M. d,   Y"}}
+                </span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 
-
-    <p> <b> Skills: </b> <br>{{designer.skills}} </p>
-    <p> <b> Experience Level: </b> <br>{{designer.experience}} </p>
+<!-- <p> <b>Current Location:</b> <br> {{developer.country.name}}</p>
+    <p> <b> Skills: </b> <br>{{developer.skills}} </p>
+    <p> <b> Experience Level: </b> <br>{{developer.experience}} </p>
     <p>
 
-        <b>Joined:</b> <br> {{designer.date_joined| date:"M. d,   Y"}}
-    </p>
+       -->
 
-
-</div>
-<br>
-
-{% endif %}
-{% endfor %}
 {% if is_paginated %}
 <ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}

@@ -648,3 +648,13 @@ button.stripe-button-el > span {
   border: 1px solid rgb(209, 209, 209);
   border-radius: 0 !important;
 }
+
+.list-users {
+  padding: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .list-users {
+    padding: 10px;
+  }
+}

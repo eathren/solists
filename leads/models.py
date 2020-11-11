@@ -82,7 +82,7 @@ class Lead(models.Model):
 
     LEAD_SKILLS = (
          ('Agile', 'Agile'),
-        ('Amazon Web Services', 'Amazon Web Services'),
+        ('AWS', 'AWS'),
         ('AngularJS', 'AngularJS'),
         ('Ansible', 'Ansible'),
         ('AI', 'AI'),

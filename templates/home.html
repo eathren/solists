@@ -50,8 +50,7 @@
   <form class="" action="{% url 'search_results' %}" method="get">
     <div class="listing">
       <div class=" listing-body list-group-item list-group-item-action" data-toggle="collapse"
-        href="#collapseExample{{lead.id}}" role="button" aria-expanded="false"
-        aria-controls="collapseExample{{lead.id}}">
+        href="#collapse{{lead.id}}" role="button" aria-expanded="false" aria-controls="collapse{{lead.id}}">
 
         <div class="listing-header">
           <div class="row w-100 align-items-center">
@@ -138,7 +137,7 @@
 
         </div> -->
       </div>
-      <div class="collapse" id="collapseExample{{lead.id}}">
+      <div class="collapse" id="collapse{{lead.id}}">
         <div class="card card-body card-border-fix">
           {% if lead.salary_range %}
           <b> Salary:</b>

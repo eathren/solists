@@ -1,6 +1,6 @@
 {% extends '_base.html' %}
 {% block title %}
-Solists | Profile | {{designer.first_name}} {{designer.last_name}}
+Solists | Profile | {{dev.first_name}} {{dev.last_name}}
 {% endblock %}
 
 
@@ -8,53 +8,53 @@ Solists | Profile | {{designer.first_name}} {{designer.last_name}}
 
 <div class="card-user">
 
-        <h2>{{designer.first_name}} {{designer.last_name}}</h2>
-        {% if designer.job_title %}
-        <h4> {{designer.job_title}}</h4>
+        <h2>{{dev.first_name}} {{dev.last_name}}</h2>
+        {% if dev.job_title %}
+        <h4> {{dev.job_title}}</h4>
         {% else %}
-        {% if designer.developer %}
+        {% if dev.developer %}
         <h4> Developer </h4>
         {% else %}
         {% endif %}
-        {% if designer.designer %}
+        {% if dev.dev %}
         <h4> Designer </h4>
         {% else %}
         {% endif %}
         {% endif %}
         <div class="text-secondary">
-                {% if designer.linkedin %}
-                <a class="margin-padding-left-none btn-floating   " target="_blank" href="{{designer.linkedin}}"><i
+                {% if dev.linkedin %}
+                <a class="margin-padding-left-none btn-floating   " target="_blank" href="{{dev.linkedin}}"><i
                                 class="fa  fa-icon fa-2x fa-linkedin-square" aria-hidden=" true"></i>
                 </a>
                 {% endif %}
-                {% if designer.github %}
-                <a class="margin-padding-left-none " target="_blank" href="{{designer.github}}"><i
+                {% if dev.github %}
+                <a class="margin-padding-left-none " target="_blank" href="{{dev.github}}"><i
                                 class="fa  fa-icon fa-2x fa-github-square" aria-hidden=" true"></i>
                 </a>
                 {% endif %}
-                {%  if designer.website %}
+                {%  if dev.website %}
 
-                <a class="margin-padding-left-none " target="_blank" href="{{designer.website}}"><i
+                <a class="margin-padding-left-none " target="_blank" href="{{dev.website}}"><i
                                 class="fa  fa-icon fa-2x fa-globe" aria-hidden=" true"></i>
                 </a>
                 {% endif %}
-                {% if designer.stackoverflow %}
-                <a class="margin-padding-left-none " target="_blank" href="{{designer.stackoverflow}}"><i
+                {% if dev.stackoverflow %}
+                <a class="margin-padding-left-none " target="_blank" href="{{dev.stackoverflow}}"><i
                                 class="fa  fa-icon fa-2x fa-stack-overflow" aria-hidden=" true"></i></a>
                 {% endif %}
         </div>
         <hr>
 
-        <p> <b>Current Location:</b> <br> {{designer.country.name}}</p>
+        <p> <b>Current Location:</b> <br> {{dev.country.name}}</p>
 
-        {% if designer.description %}
-        <p> <b> Summary: </b> <br> {{designer.description}}</p>
+        {% if dev.description %}
+        <p> <b> Summary: </b> <br> {{dev.description}}</p>
         {% endif %}
 
-        <p> <b> Skills: </b> <br>{{designer.skills}} </p>
-        <p> <b> Experience Level: </b> <br>{{designer.experience}} </p>
-        <b>Joined:</b> <br> {{designer.date_joined| date:"M. d,   Y"}}
-        {% if designer.allow_contact and designer.contact_email %}
+        <p> <b> Skills: </b> <br>{{dev.skills}} </p>
+        <p> <b> Experience Level: </b> <br>{{dev.experience}} </p>
+        <b>Joined:</b> <br> {{dev.date_joined| date:"M. d,   Y"}}
+        {% if dev.allow_contact and dev.contact_email %}
         <hr>
         <a class="card-button card-button-small " href="mailto:{{developer.contact_email}}"> Contact
         </a>
