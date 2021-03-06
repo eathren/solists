@@ -4,6 +4,8 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django_countries.fields import CountryField
 from ckeditor.fields import RichTextField
+# from . import services
+
 
 from multiselectfield import MultiSelectField
 # Create your models here.
@@ -19,7 +21,7 @@ class Lead(models.Model):
     user_author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
-        related_name="author"
+        related_name="author",
     )
     salary_range = models.CharField(
         max_length=100, blank=True, help_text="Ex: $70,000 - $80,000", verbose_name="Annual Salary")
@@ -36,7 +38,7 @@ class Lead(models.Model):
     author = models.CharField(max_length=200, blank=True)
     contact_info = models.CharField(max_length=100, blank=True, help_text="This email is public. The apply button defaults to it if you do not supply an Apply Url")
     application_link = models.CharField(max_length=100, blank=True, verbose_name="Application URL", help_text="Ex: https://www.yoursite.com/apply")
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
 
     id = models.UUIDField(
         primary_key=True,
@@ -197,3 +199,4 @@ class Lead(models.Model):
 
     def __str__(self):
         return self.title
+    

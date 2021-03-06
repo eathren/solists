@@ -34,7 +34,7 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     change_password_form = auth_admin.AdminPasswordChangeForm
     model = CustomUser
-    list_display = ['email', 'username','id',  "country", "experience", 'developer']
+    list_display = ['pk', 'email', 'username','id',  "country", "experience", 'developer']
     search_fields = ('first_name', 'last_name', 'email')
     ordering = ('email',)
     readonly_fields = ('last_login', 'date_joined',)

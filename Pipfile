@@ -27,6 +27,9 @@ django-countries = "*"
 django-ckeditor = "*"
 django-sendgrid-v5 = "*"
 django-tinymce = "*"
+celery = "*"
+apscheduler = "*"
+django-apscheduler = "*"
 
 [requires]
 python_version = "3.8"

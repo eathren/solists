@@ -77,9 +77,14 @@
                     {% endif %}
                     <span class="p-header-listing-secondary d-lg-none ">
                       -
-                    </span>{% if lead.country %} <input type="submit" name="q"
+                    </span>
+                    {% if lead.country %} <input type="submit" name="q"
                       class="bg-transparent listing-button listing-tertiary-button btn "
                       onclick="event.stopPropagation()" value="{{lead.country}}"> -
+                    {% endif %}
+                      {% if lead.remote and not lead.country %} <input type="submit" name="q"
+                      class="bg-transparent listing-button listing-tertiary-button btn "
+                      onclick="event.stopPropagation()" value="{{lead.remote}}"> -
                     {% endif %}
                     {% for job in lead.job_type %}
                     <input type="submit" name="q"
@@ -168,8 +173,8 @@
   </form>
 
   {% endfor %}
-
   {% if is_paginated %}
+  <br>
   <ul class="pagination justify-content-center">
     {% if page_obj.has_previous %}
     <li class="page-item ">
