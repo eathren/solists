@@ -21,6 +21,9 @@ def save_new_jobs():
     json_data = get_jobs_json()
     now = datetime.utcnow()
     today_data = True
+    
+    LEAD_SKILLS = Leads.LEAD_SKILLS
+        
     if json_data is not None:
         while today_data == True:
             for job in json_data:
@@ -33,12 +36,20 @@ def save_new_jobs():
                         new_job.author = "Github Jobs"
                         new_job.developer = True
                         new_job.description = job["description"]
+                        new_job.skills = ()
+                        shared = set(x for x, _ in LEAD_SKILLS) & set(list(text.split()))
+                        for item in shared:
+                            new_job.skills += (item , )
+                        
                         new_job.how_to_apply = job["how_to_apply"]
                         new_job.author = "Github Jobs"
+                        
                         if job["type"] == "Full Time":
-                            new_job.job_type = 'Full-Time'
+                            new_job.job_type = 'Full-time'
+
                         elif job["type"] == "Contract":
                             new_job.job_type = 'Contract'
+
                         new_job.title = job["title"]
                         new_job.company = job["company"]
                         application_url =  re.search(r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", job["how_to_apply"] )
