@@ -42,7 +42,9 @@ class SearchResultsView(ListView):
 class PostLeadView(LoginRequiredMixin, CreateView):
     form_class = LeadCreationForm
     model = Lead
-    success_url = reverse_lazy('orders')
+    # success_url = reverse_lazy('orders')
+    success_url = reverse_lazy('home')
+    
     template_name = 'leads/create_lead.html'
 
     def form_valid(self, form):

@@ -1,45 +1,30 @@
-{% extends '_base.html' %}
-{% load crispy_forms_tags %}
-
-
-{% block title %} Solists | Post a Job
-{% endblock  %}
-{% block content %}
-<h2 class="center"> Post a Job </h2>
+{% extends '_base.html' %} {% load crispy_forms_tags %} {% block title %}
+Solists | Post a Job {% endblock %} {% block content %}
+<h2 class="center">Post a Job</h2>
 <div class="alert alert-info" role="alert">
-    Job postings may be denied if: <br>
-    <ul>
-        <li>
-            We could not find enough information for the job
-        </li>
-        <li>
-            Salary is not listed somewhere in the posting
-        </li>
-        <li>
-            The job is not remote
-        </li>
-    </ul>
+  Job postings may be denied if: <br />
+  <ul>
+    <li>We could not find enough information for the job</li>
+    <li>Salary is not listed somewhere in the posting</li>
+    <li>The job is not remote</li>
+  </ul>
 </div>
-<hr>
+<hr />
 <div class="card-basic">
+  <br />
+  <form method="post">
+    {% csrf_token %} {{form.media}} {{form|crispy}}
 
+    <button class="card-button" type="submit">Post Job</button>
 
-
-    <br>
-    <form method="post">
-        {% csrf_token %}
-        {{form.media}}
-        {{form|crispy}}
-
-
-        <button class="card-button" type="submit">Continue to Payment</button>
-
-    </form><br>
-    <p class="text-grey">
-        Have an issue or is something missing? You can contact support at <a href="mailto:admin@solists.com">
-
-            admin@solists.com
-        </a>
-    </p>
+    {% comment %}
+    <button class="card-button" type="submit">Continue to Payment</button>
+    {% endcomment %}
+  </form>
+  <br />
+  <p class="text-grey">
+    Have an issue or is something missing? You can contact support at
+    <a href="mailto:admin@solists.com"> admin@solists.com </a>
+  </p>
 </div>
 {% endblock content %}
