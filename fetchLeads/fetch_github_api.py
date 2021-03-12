@@ -35,7 +35,9 @@ def save_new_jobs():
                     new_job.developer = True
                     new_job.description = job["description"]
                     new_job.skills = ()
-                    shared = set(x for x, _ in LEAD_SKILLS) & set(list(new_job.description.upper().split()))
+                    # remove all html tags, and keep only lowercase and uppercase characters.
+                    # then keep only shared words between skills list and pure text from description.
+                    shared = set(x for x, _ in LEAD_SKILLS) & set(list(re.sub(r"<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});|[^a-zA-Z]", " ", new_job.description).upper().split()))
                     for item in shared:
                         new_job.skills += (item , )
                     new_job.how_to_apply = job["how_to_apply"]
