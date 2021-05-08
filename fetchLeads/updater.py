@@ -7,5 +7,5 @@ from fetchLeads import fetch_github_api
         
 def start():
         scheduler = BackgroundScheduler()
-        scheduler.add_job(fetch_github_api.save_new_jobs, 'interval', hours=24)
+        scheduler.add_job(fetch_github_api.save_new_jobs, 'interval', hours=48)
         scheduler.start()
